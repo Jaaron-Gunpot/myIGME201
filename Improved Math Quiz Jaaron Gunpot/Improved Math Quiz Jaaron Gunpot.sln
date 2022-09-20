@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Improved Math Quiz Jaaron Gunpot", "Improved Math Quiz Jaaron Gunpot\Improved Math Quiz Jaaron Gunpot.csproj", "{3F98FAA9-8B3A-4296-AF50-41F23AFBDA1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F98FAA9-8B3A-4296-AF50-41F23AFBDA1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F98FAA9-8B3A-4296-AF50-41F23AFBDA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F98FAA9-8B3A-4296-AF50-41F23AFBDA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F98FAA9-8B3A-4296-AF50-41F23AFBDA1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E10DFBD4-92ED-4D37-9593-FA9A540EE1E8}
+	EndGlobalSection
+EndGlobal
