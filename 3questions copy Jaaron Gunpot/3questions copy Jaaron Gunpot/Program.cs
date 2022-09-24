@@ -16,7 +16,6 @@ namespace _3questions_copy_Jaaron_Gunpot
         static Timer fiveSec;
         static void Main(string[] args)
         {
-
             //if the time is finished or not
             timeOut=false;
             //to check if the response is a valid input
