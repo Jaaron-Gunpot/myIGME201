@@ -9,24 +9,26 @@ namespace Raise_Jaaron_Gunpot
     static internal class Program
     {
 
-        //name declaration
-        static public string sName;
+        struct employee
+        {
+            public string sName;
+            public double dSalary;
+        }
 
-        //salary declaration
-        static public double dSalary = 30000; 
         static void Main(string[] args)
         {
-
+            employee employee = new employee();
             //prompts for name
             Console.WriteLine("What is your name?");
 
-            sName = Console.ReadLine();
+            employee.sName = Console.ReadLine();
+            employee.dSalary = 30000;
 
-            if (GiveRaise(sName,ref dSalary))
+            if (GiveRaise(employee))
             {
-                dSalary = dSalary+19999.00;
+                employee.dSalary = employee.dSalary + 19999.00;
                 Console.WriteLine("You got a raise, congrats");
-                Console.WriteLine("Your Salary is now $"+dSalary);
+                Console.WriteLine("Your Salary is now $" + employee.dSalary);
             }
             else
             {
@@ -35,9 +37,9 @@ namespace Raise_Jaaron_Gunpot
         }
         //Author: Jaaron Gunpot
         //Purpose: check if its my name and give me a raise
-        static bool GiveRaise(string name, ref double salary)
+        static bool GiveRaise(employee employee)
         {
-            if (name.ToLower() == "jaaron")
+            if (employee.sName.ToLower() == "jaaron")
             {
                 return true;
             }
@@ -45,7 +47,7 @@ namespace Raise_Jaaron_Gunpot
             {
                 return false;
             }
-            
+
         }
     }
 }
