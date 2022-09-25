@@ -23,7 +23,20 @@ namespace MathRound_Delagate_Jaaron_gunpot
         {
             myRound round;
 
+            round = delegate (double x, int y)
+            {
+                return Math.Round(x, y);
+            };
             round = new myRound(Math.Round);
+            round = (x, y) =>
+            {
+                return Math.Round(x, y);
+            };
+            round = (double x, int y) =>
+            {
+                return Math.Round(x, y);
+            };
+            round = Math.Round;
         }
     }
 }
