@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathRound Delagate Jaaron gunpot", "MathRound Delagate Jaaron gunpot\MathRound Delagate Jaaron gunpot.csproj", "{DB9E646D-9834-4891-B8C9-088B07E7672B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB9E646D-9834-4891-B8C9-088B07E7672B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB9E646D-9834-4891-B8C9-088B07E7672B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB9E646D-9834-4891-B8C9-088B07E7672B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB9E646D-9834-4891-B8C9-088B07E7672B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B8E57FB-9E03-408E-A82E-A97C8334633E}
+	EndGlobalSection
+EndGlobal
