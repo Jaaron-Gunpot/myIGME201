@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -126,10 +127,17 @@ namespace _3questions_copy_Jaaron_Gunpot
             }
         end:
             //asks the user if they want to play again
-            Console.Write("Press Enter to Play Again");
-            Console.ReadLine();
+            Console.Write("do you want to play again?");
+            string answer=Console.ReadLine();
+            if (answer.ToLower().StartsWith("y"))
+            {
+                goto begin;
+            }
+            else
+            {
+            }
             //congratulates if answered correctly and provides awnser if wrong or out of time
-            goto begin;
+            
 
         }
     }
