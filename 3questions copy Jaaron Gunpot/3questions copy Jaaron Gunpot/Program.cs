@@ -93,6 +93,15 @@ namespace _3questions_copy_Jaaron_Gunpot
                         break;
                     case 2:
                         Console.WriteLine("What is the awnser to life, the universe and everything?");
+                        if (response.ToLower() == "42" && !timeOut)
+                        {
+                            Console.WriteLine("Well Done!");
+                        }
+                        else if (response.ToLower() != "42" || timeOut)
+                        {
+                            Console.WriteLine("The awnser is: 42");
+                            timeOut = true;
+                        }
                         break;
                     case 3:
                         Console.WriteLine("What is the airspeed velocity of an unladen swallow?");
