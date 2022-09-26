@@ -12,13 +12,13 @@ namespace _3questions_copy_Jaaron_Gunpot
     static internal class Program
     {
 
-
+        //if the time is finished or not
+        static bool timeOut = false;
         static Timer fiveSec;
         static public void Main(string[] args)
         {
         begin:
-            //if the time is finished or not
-            bool timeOut = false;
+
             //to check if the response is a valid input
             bool qChosen = false;
             //hold number chosen for question
@@ -70,8 +70,7 @@ namespace _3questions_copy_Jaaron_Gunpot
                 fiveSec.Start();
                 fiveSec.Elapsed += delegate (object sender, ElapsedEventArgs e)
                 {
-                    //Console.WriteLine("");
-                    Console.WriteLine("Your time is up!");
+                    Console.WriteLine("time is up!");
                     timeOut = true;
                     fiveSec.Stop();
                 };
@@ -139,6 +138,12 @@ namespace _3questions_copy_Jaaron_Gunpot
             //congratulates if answered correctly and provides awnser if wrong or out of time
             
 
+        }
+        static void fiveSecPassed(object sender, ElapsedEventArgs e)
+        {
+            Console.WriteLine("time is up!");
+            timeOut = true;
+            fiveSec.Stop();
         }
     }
 }
