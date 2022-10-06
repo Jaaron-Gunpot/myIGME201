@@ -115,22 +115,32 @@ namespace PeopleApp
                             Person thisPerson = (Person)thisEntry.Value;
 
                             Console.Write($"{i + 1}: {thisPerson.email} | {thisPerson.name} | {thisPerson.age} | {thisPerson.LicenseId} | ");
-
+                            
                             if (thisPerson.GetType() == typeof(Student))
                             {
                                 // gpa only belongs to Student, so we need a Student reference variable to output that
                                 Student student = (Student)thisPerson;
                                 Console.WriteLine($"{student.gpa}");
+                                foreach (string code in student.courseCodes)
+                                {
+                                    Console.WriteLine($"{code}{courses[code].description}");
+                                    Console.Write($"{courses[code].schedule.daysOfWeek}{courses[code].schedule.startTime:hh:mmtt}-{courses[code].schedule.endTime:hh:mmtt}");
+                                }
                             }
-
+                            
                             if (thisPerson.GetType() == typeof(Teacher))
                             {
                                 // specialty only belongs to Teacher, so we need a Teacher reference variable to output that
                                 Teacher teacher = (Teacher)thisPerson;
                                 Console.WriteLine($"{teacher.specialty}");
+                                foreach (string code in teacher.courseCodes)
+                                {
+                                    Console.WriteLine($"{code}");
+                                }
                             }
                             ++i;
                         }
+
 
                         break;
 
@@ -212,19 +222,12 @@ namespace PeopleApp
                 Student thisStudent = (Student)thisPerson;
                 do
                 {
-                    Console.Write($"GPA ({thisStudent.courseCodes})=> ");
+                    Console.Write($"Course ()=> ");
                     string code = Console.ReadLine();
                     if(code.Length > 0)
                     {
-                        if(code.Length==3)
-                        {
                             thisStudent.courseCodes.Add(code);
                             break;
-                        }
-                    }
-                    else
-                    {
-                        break;
                     }
                 } while (true);
 

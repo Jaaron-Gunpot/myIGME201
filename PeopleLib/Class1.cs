@@ -111,7 +111,6 @@ namespace PeopleLib
         public double gpa;
         public collegeYear eCollegeYear;
         public List<string> courseCodes = new List<string>();
-
         public List<String> CourseList
         {
             get
