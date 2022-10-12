@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitTst2_14
 {
-    struct Friend
+    public class Friend
     {
         public string name;
         public string greeting;
@@ -19,8 +19,8 @@ namespace UnitTst2_14
 
         static void Main(string[] args)
         {
-            Friend friend;
-            Friend enemy;
+            Friend friend = new Friend();
+            Friend enemy = new Friend();
 
             // create my friend Charlie Sheen
             friend.name = "Charlie Sheen";
@@ -29,7 +29,7 @@ namespace UnitTst2_14
             friend.address = "123 Any Street, NY NY 12202";
 
             // now he has become my enemy
-            enemy = friend;
+            //enemy = friend;
 
             // set the enemy greeting and address without changing the friend variable
             enemy.greeting = "Sorry Charlie";
