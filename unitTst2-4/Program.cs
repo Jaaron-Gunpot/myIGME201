@@ -86,6 +86,78 @@ namespace unitTst2_4
         {
             get { return femaleSideKick; }
         }
+        public void TimeTravel()
+        {
+
+        }
+        public static bool operator <(Tardis tardis1,Tardis tardis2)
+        {
+            if (tardis1.WhichDrWho == 10)
+            {
+                return false;
+            }
+            else if (tardis2.WhichDrWho == 10)
+            {
+                return true;
+            }
+            else
+            {
+                return tardis1.WhichDrWho < tardis2.WhichDrWho;
+            }
+        }
+        public static bool operator >(Tardis tardis1, Tardis tardis2)
+        {
+            if (tardis1.WhichDrWho == 10)
+            {
+                return true;
+            }
+            else if (tardis2.WhichDrWho == 10)
+            {
+                return false;
+            }
+            else
+            {
+                return tardis1.WhichDrWho > tardis2.WhichDrWho;
+            }
+        }
+        public static bool operator <=(Tardis tardis1, Tardis tardis2)
+        {
+            if (tardis1.WhichDrWho == 10)
+            {
+                return false;
+            }
+            else if (tardis2.WhichDrWho == 10)
+            {
+                return true;
+            }
+            else
+            {
+                return tardis1.WhichDrWho <= tardis2.WhichDrWho;
+            }
+        }
+        public static bool operator >=(Tardis tardis1, Tardis tardis2)
+        {
+            if (tardis1.WhichDrWho == 10)
+            {
+                return true;
+            }
+            else if (tardis2.WhichDrWho == 10)
+            {
+                return false;
+            }
+            else
+            {
+                return tardis1.WhichDrWho >= tardis2.WhichDrWho;
+            }
+        }
+        public static bool operator ==(Tardis tardis1, Tardis tardis2)
+        {
+            return tardis1.WhichDrWho == tardis2.WhichDrWho;
+        }
+        public static bool operator !=(Tardis tardis1, Tardis tardis2)
+        {
+            return tardis1.WhichDrWho != tardis2.WhichDrWho;
+        }
     }
     public class PhoneBooth : PushButtonPhone
     {
@@ -105,6 +177,21 @@ namespace unitTst2_4
     {
         static void Main(string[] args)
         {
+            Tardis tardis = new Tardis();
+            PhoneBooth phoneBooth = new PhoneBooth();
+            UsePhone(tardis);
+            UsePhone(phoneBooth);
+        }
+        static void UsePhone(object obj)
+        {
+            if(obj is Tardis)
+            {
+                ((Tardis)obj).TimeTravel();
+            }
+            if(obj is PhoneBooth)
+            {
+                ((PhoneBooth)obj).OpenDoor();
+            }
         }
     }
 }
