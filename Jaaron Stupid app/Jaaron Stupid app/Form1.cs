@@ -42,8 +42,9 @@ namespace Jaaron_Stupid_app
 
         private void Rarity__MouseEnter(object sender, EventArgs e)
         {
-            SoundPlayer laugh = new SoundPlayer(@"Rarity.wav");
-            laugh.Play();
+            //remember to uncomment when have acssess to internet
+            //SoundPlayer laugh = new SoundPlayer(@"Rarity.wav");
+            //laugh.Play();
         }
         public void AnnoyingMusic()
         {
@@ -115,8 +116,8 @@ namespace Jaaron_Stupid_app
                 }
                 catch
                 {
-                    AreYouOK youOK = new AreYouOK();
-                    youOK.Show();
+                    AreYouOK youOK2 = new AreYouOK();
+                    youOK2.Show();
                 }
             }
         }
