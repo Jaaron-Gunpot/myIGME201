@@ -100,8 +100,5 @@
   <ItemGroup>
     <Folder Include="files\" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Windows Error.wav" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

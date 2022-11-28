@@ -89,12 +89,13 @@ namespace Jaaron_Stupid_app
             int randForm = random.Next(0,10);
             if (randForm <= 3)
             {
+                AreYouOK youOK = new AreYouOK();
                 //SoundPlayer sound = new SoundPlayer(@"C:\Windows\Media\Windows Error.wav");
                 //sound.Play();
                 //Assembly assembly = Assembly.GetExecutingAssembly();
                 //Stream stream = assembly.GetManifestResourceStream("<Program.CS>.Windows Error.wav");
                 SoundPlayer soundPlayer = new SoundPlayer(@"Error.wav");
-                soundPlayer.
+                //soundPlayer.
                 soundPlayer.Play();
                 youOK.Show();
             }
