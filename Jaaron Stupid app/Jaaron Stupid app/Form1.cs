@@ -94,7 +94,7 @@ namespace Jaaron_Stupid_app
                 //Assembly assembly = Assembly.GetExecutingAssembly();
                 //Stream stream = assembly.GetManifestResourceStream("<Program.CS>.Windows Error.wav");
                 SoundPlayer soundPlayer = new SoundPlayer(@"Error.wav");
-                soundPlayer.
+                //soundPlayer.
                 soundPlayer.Play();
                 youOK.Show();
             }
