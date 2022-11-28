@@ -32,7 +32,6 @@
             this.pinkiePieButton = new System.Windows.Forms.Button();
             this.rainbowDashButton = new System.Windows.Forms.Button();
             this.guessTimer = new System.Windows.Forms.Timer(this.components);
-            this.crazyBar = new System.Windows.Forms.TrackBar();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.twilight = new System.Windows.Forms.Button();
             this.applejack = new System.Windows.Forms.Button();
@@ -40,10 +39,13 @@
             this.rarity = new System.Windows.Forms.Button();
             this.trackBar5 = new System.Windows.Forms.TrackBar();
             this.fluttershy = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.crazyBar)).BeginInit();
+            this.crazyBar = new System.Windows.Forms.TrackBar();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crazyBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
             // 
             // pinkiePieButton
@@ -57,20 +59,12 @@
             // 
             // rainbowDashButton
             // 
-            this.rainbowDashButton.Location = new System.Drawing.Point(171, 92);
+            this.rainbowDashButton.Location = new System.Drawing.Point(37, 26);
             this.rainbowDashButton.Name = "rainbowDashButton";
             this.rainbowDashButton.Size = new System.Drawing.Size(132, 38);
             this.rainbowDashButton.TabIndex = 1;
             this.rainbowDashButton.Text = "Rainbow Dash";
             this.rainbowDashButton.UseVisualStyleBackColor = true;
-            // 
-            // crazyBar
-            // 
-            this.crazyBar.Location = new System.Drawing.Point(416, 136);
-            this.crazyBar.Name = "crazyBar";
-            this.crazyBar.Size = new System.Drawing.Size(278, 69);
-            this.crazyBar.TabIndex = 2;
-            this.crazyBar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // trackBar1
             // 
@@ -117,25 +111,42 @@
             // 
             // trackBar5
             // 
-            this.trackBar5.Location = new System.Drawing.Point(416, 286);
+            this.trackBar5.Location = new System.Drawing.Point(495, 342);
             this.trackBar5.Name = "trackBar5";
             this.trackBar5.Size = new System.Drawing.Size(278, 69);
             this.trackBar5.TabIndex = 11;
             // 
             // fluttershy
             // 
-            this.fluttershy.Location = new System.Drawing.Point(507, 242);
+            this.fluttershy.Location = new System.Drawing.Point(586, 298);
             this.fluttershy.Name = "fluttershy";
             this.fluttershy.Size = new System.Drawing.Size(137, 38);
             this.fluttershy.TabIndex = 10;
             this.fluttershy.Text = "Fluttershy";
             this.fluttershy.UseVisualStyleBackColor = true;
             // 
+            // crazyBar
+            // 
+            this.crazyBar.Location = new System.Drawing.Point(416, 136);
+            this.crazyBar.Name = "crazyBar";
+            this.crazyBar.Size = new System.Drawing.Size(278, 69);
+            this.crazyBar.TabIndex = 2;
+            this.crazyBar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(416, 211);
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(278, 69);
+            this.trackBar2.TabIndex = 12;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            // 
             // mlp4Life
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.trackBar5);
             this.Controls.Add(this.fluttershy);
             this.Controls.Add(this.trackBar4);
@@ -149,10 +160,11 @@
             this.MaximizeBox = false;
             this.Name = "mlp4Life";
             this.Text = "MLP";
-            ((System.ComponentModel.ISupportInitialize)(this.crazyBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crazyBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,7 +175,6 @@
         private System.Windows.Forms.Button pinkiePieButton;
         private System.Windows.Forms.Button rainbowDashButton;
         private System.Windows.Forms.Timer guessTimer;
-        private System.Windows.Forms.TrackBar crazyBar;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Button twilight;
         private System.Windows.Forms.Button applejack;
@@ -171,6 +182,8 @@
         private System.Windows.Forms.Button rarity;
         private System.Windows.Forms.TrackBar trackBar5;
         private System.Windows.Forms.Button fluttershy;
+        private System.Windows.Forms.TrackBar crazyBar;
+        private System.Windows.Forms.TrackBar trackBar2;
     }
 }
 
