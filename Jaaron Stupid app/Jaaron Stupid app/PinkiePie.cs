@@ -16,6 +16,8 @@ namespace Jaaron_Stupid_app
         {
             InitializeComponent();
             this.Owner = owner;
+            CenterToParent();
+            this.ponyPictureBox.ImageLocation = @"Pinkie_Pie.png";
             //makes picture fit into the picture box
             this.ponyPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
         }

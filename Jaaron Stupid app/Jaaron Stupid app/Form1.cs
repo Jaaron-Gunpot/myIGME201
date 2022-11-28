@@ -42,24 +42,31 @@ namespace Jaaron_Stupid_app
 
         private void Rarity__MouseEnter(object sender, EventArgs e)
         {
-
+            SoundPlayer laugh = new SoundPlayer(@"Rarity.wav");
+            laugh.Play();
         }
         public void AnnoyingMusic()
         {
-            SoundPlayer MLP= new SoundPlayer(@"MLP.wav");
-            MLP.Play();
+            
         }
         public void Mlp()
         {
             MLPRepeat mlp;
             mlp = new MLPRepeat(AnnoyingMusic);
-            Random random;
-            random= new Random();
+            //Random random;
+            //random= new Random();
 
             while(true)
             {
-                Invoke(mlp);
-                Thread.Sleep(160000);
+                //try
+                //{
+                //    Invoke(mlp);
+                //    Thread.Sleep(160000);
+                //}
+                //catch
+                //{
+                //    Thread.Sleep(10);
+                //}
             }
         }
 
@@ -96,29 +103,22 @@ namespace Jaaron_Stupid_app
                 //Stream stream = assembly.GetManifestResourceStream("<Program.CS>.Windows Error.wav");
                 SoundPlayer soundPlayer = new SoundPlayer(@"Error.wav");
                 //soundPlayer.
+                if(randForm == 1)
+                {
+                    PinkiePie pinkie = new PinkiePie(this);
+                    pinkie.Show();
+                }
                 soundPlayer.Play();
-                youOK.Show();
+                try
+                {
+                    youOK.Show();
+                }
+                catch
+                {
+                    AreYouOK youOK = new AreYouOK();
+                    youOK.Show();
+                }
             }
-        }
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void trackBar1_Scroll_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void trackBar2_Scroll(object sender, EventArgs e)
-        {
-
         }
     }
 }

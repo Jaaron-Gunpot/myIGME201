@@ -40,43 +40,45 @@
             this.democratFilterRadioButton = new System.Windows.Forms.RadioButton();
             this.allFilterRadioButton = new System.Windows.Forms.RadioButton();
             this.benjaminHarrisRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.benjaminHarrisonTextBox = new System.Windows.Forms.TextBox();
+            this.franklinDRooseveltTextBox = new System.Windows.Forms.TextBox();
             this.franklinDRooseveltRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.williamJClintonTextBox = new System.Windows.Forms.TextBox();
             this.williamJClintonRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.jamesBuchananTextBox = new System.Windows.Forms.TextBox();
             this.jamesBuchananRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.franklinPierceTextBox = new System.Windows.Forms.TextBox();
             this.franklinPierceRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.georgeWBushTextBox = new System.Windows.Forms.TextBox();
             this.georgeWBushRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.barackObamaTextBox = new System.Windows.Forms.TextBox();
             this.barackObamaRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.johnFKennedyTextBox = new System.Windows.Forms.TextBox();
             this.johnFKennedyRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.thomasJeffersonTextbox = new System.Windows.Forms.TextBox();
             this.thomasJeffersonRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.theodoreRooseveltTextBox = new System.Windows.Forms.TextBox();
             this.theodoreRooseveltRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.johnAdamsTextBox = new System.Windows.Forms.TextBox();
             this.johnAdamsRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.georgeWashingtonTextBox = new System.Windows.Forms.TextBox();
             this.georgeWashingtonRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.martinVanBurenTextBox = new System.Windows.Forms.TextBox();
             this.martinVanBurenRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.dwightDEisenhowerTextBox = new System.Windows.Forms.TextBox();
             this.dwightDEisenhowerRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.ronaldReaganTextBox = new System.Windows.Forms.TextBox();
             this.ronaldReaganRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.williamMcKinleyTextBox = new System.Windows.Forms.TextBox();
             this.williamMcKinleyRadioButton = new System.Windows.Forms.RadioButton();
             this.exitButton = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.webBrowserGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // webBrowserGroupBox
@@ -95,6 +97,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(3, 16);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
             this.webBrowser1.Size = new System.Drawing.Size(458, 467);
             this.webBrowser1.TabIndex = 0;
             // 
@@ -185,22 +188,23 @@
             this.benjaminHarrisRadioButton.Text = "Benjamin Harrison";
             this.benjaminHarrisRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // benjaminHarrisonTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(35, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "0";
-            this.toolTip1.SetToolTip(this.textBox1, "Which # President?");
+            this.benjaminHarrisonTextBox.Location = new System.Drawing.Point(144, 13);
+            this.benjaminHarrisonTextBox.Name = "benjaminHarrisonTextBox";
+            this.benjaminHarrisonTextBox.Size = new System.Drawing.Size(35, 20);
+            this.benjaminHarrisonTextBox.TabIndex = 4;
+            this.benjaminHarrisonTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.benjaminHarrisonTextBox, "Which # President?");
             // 
-            // textBox2
+            // franklinDRooseveltTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(35, 20);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.Text = "0";
+            this.franklinDRooseveltTextBox.Location = new System.Drawing.Point(144, 36);
+            this.franklinDRooseveltTextBox.Name = "franklinDRooseveltTextBox";
+            this.franklinDRooseveltTextBox.Size = new System.Drawing.Size(35, 20);
+            this.franklinDRooseveltTextBox.TabIndex = 6;
+            this.franklinDRooseveltTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.franklinDRooseveltTextBox, "Which # President?");
             // 
             // franklinDRooseveltRadioButton
             // 
@@ -212,13 +216,14 @@
             this.franklinDRooseveltRadioButton.Text = "Franklin D Roosevelt";
             this.franklinDRooseveltRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // williamJClintonTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(144, 59);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(35, 20);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.Text = "0";
+            this.williamJClintonTextBox.Location = new System.Drawing.Point(144, 59);
+            this.williamJClintonTextBox.Name = "williamJClintonTextBox";
+            this.williamJClintonTextBox.Size = new System.Drawing.Size(35, 20);
+            this.williamJClintonTextBox.TabIndex = 8;
+            this.williamJClintonTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.williamJClintonTextBox, "Which # President?");
             // 
             // williamJClintonRadioButton
             // 
@@ -227,17 +232,17 @@
             this.williamJClintonRadioButton.Name = "williamJClintonRadioButton";
             this.williamJClintonRadioButton.Size = new System.Drawing.Size(101, 17);
             this.williamJClintonRadioButton.TabIndex = 7;
-            this.williamJClintonRadioButton.TabStop = true;
             this.williamJClintonRadioButton.Text = "William J Clinton";
             this.williamJClintonRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // jamesBuchananTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(144, 82);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(35, 20);
-            this.textBox4.TabIndex = 10;
-            this.textBox4.Text = "0";
+            this.jamesBuchananTextBox.Location = new System.Drawing.Point(144, 82);
+            this.jamesBuchananTextBox.Name = "jamesBuchananTextBox";
+            this.jamesBuchananTextBox.Size = new System.Drawing.Size(35, 20);
+            this.jamesBuchananTextBox.TabIndex = 10;
+            this.jamesBuchananTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.jamesBuchananTextBox, "Which # President?");
             // 
             // jamesBuchananRadioButton
             // 
@@ -246,17 +251,17 @@
             this.jamesBuchananRadioButton.Name = "jamesBuchananRadioButton";
             this.jamesBuchananRadioButton.Size = new System.Drawing.Size(107, 17);
             this.jamesBuchananRadioButton.TabIndex = 9;
-            this.jamesBuchananRadioButton.TabStop = true;
             this.jamesBuchananRadioButton.Text = "James Buchanan";
             this.jamesBuchananRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // franklinPierceTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(144, 105);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(35, 20);
-            this.textBox5.TabIndex = 12;
-            this.textBox5.Text = "0";
+            this.franklinPierceTextBox.Location = new System.Drawing.Point(144, 105);
+            this.franklinPierceTextBox.Name = "franklinPierceTextBox";
+            this.franklinPierceTextBox.Size = new System.Drawing.Size(35, 20);
+            this.franklinPierceTextBox.TabIndex = 12;
+            this.franklinPierceTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.franklinPierceTextBox, "Which # President?");
             // 
             // franklinPierceRadioButton
             // 
@@ -265,17 +270,17 @@
             this.franklinPierceRadioButton.Name = "franklinPierceRadioButton";
             this.franklinPierceRadioButton.Size = new System.Drawing.Size(95, 17);
             this.franklinPierceRadioButton.TabIndex = 11;
-            this.franklinPierceRadioButton.TabStop = true;
             this.franklinPierceRadioButton.Text = "Franklin Pierce";
             this.franklinPierceRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // georgeWBushTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(144, 128);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(35, 20);
-            this.textBox6.TabIndex = 14;
-            this.textBox6.Text = "0";
+            this.georgeWBushTextBox.Location = new System.Drawing.Point(144, 128);
+            this.georgeWBushTextBox.Name = "georgeWBushTextBox";
+            this.georgeWBushTextBox.Size = new System.Drawing.Size(35, 20);
+            this.georgeWBushTextBox.TabIndex = 14;
+            this.georgeWBushTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.georgeWBushTextBox, "Which # President?");
             // 
             // georgeWBushRadioButton
             // 
@@ -284,17 +289,17 @@
             this.georgeWBushRadioButton.Name = "georgeWBushRadioButton";
             this.georgeWBushRadioButton.Size = new System.Drawing.Size(101, 17);
             this.georgeWBushRadioButton.TabIndex = 13;
-            this.georgeWBushRadioButton.TabStop = true;
             this.georgeWBushRadioButton.Text = "George W Bush";
             this.georgeWBushRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // barackObamaTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(144, 151);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(35, 20);
-            this.textBox7.TabIndex = 16;
-            this.textBox7.Text = "0";
+            this.barackObamaTextBox.Location = new System.Drawing.Point(144, 151);
+            this.barackObamaTextBox.Name = "barackObamaTextBox";
+            this.barackObamaTextBox.Size = new System.Drawing.Size(35, 20);
+            this.barackObamaTextBox.TabIndex = 16;
+            this.barackObamaTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.barackObamaTextBox, "Which # President?");
             // 
             // barackObamaRadioButton
             // 
@@ -303,17 +308,17 @@
             this.barackObamaRadioButton.Name = "barackObamaRadioButton";
             this.barackObamaRadioButton.Size = new System.Drawing.Size(96, 17);
             this.barackObamaRadioButton.TabIndex = 15;
-            this.barackObamaRadioButton.TabStop = true;
             this.barackObamaRadioButton.Text = "Barack Obama";
             this.barackObamaRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // johnFKennedyTextBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(144, 174);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(35, 20);
-            this.textBox8.TabIndex = 18;
-            this.textBox8.Text = "0";
+            this.johnFKennedyTextBox.Location = new System.Drawing.Point(144, 174);
+            this.johnFKennedyTextBox.Name = "johnFKennedyTextBox";
+            this.johnFKennedyTextBox.Size = new System.Drawing.Size(35, 20);
+            this.johnFKennedyTextBox.TabIndex = 18;
+            this.johnFKennedyTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.johnFKennedyTextBox, "Which # President?");
             // 
             // johnFKennedyRadioButton
             // 
@@ -322,17 +327,17 @@
             this.johnFKennedyRadioButton.Name = "johnFKennedyRadioButton";
             this.johnFKennedyRadioButton.Size = new System.Drawing.Size(102, 17);
             this.johnFKennedyRadioButton.TabIndex = 17;
-            this.johnFKennedyRadioButton.TabStop = true;
             this.johnFKennedyRadioButton.Text = "John F Kennedy";
             this.johnFKennedyRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox9
+            // thomasJeffersonTextbox
             // 
-            this.textBox9.Location = new System.Drawing.Point(369, 180);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(37, 20);
-            this.textBox9.TabIndex = 34;
-            this.textBox9.Text = "0";
+            this.thomasJeffersonTextbox.Location = new System.Drawing.Point(369, 180);
+            this.thomasJeffersonTextbox.Name = "thomasJeffersonTextbox";
+            this.thomasJeffersonTextbox.Size = new System.Drawing.Size(37, 20);
+            this.thomasJeffersonTextbox.TabIndex = 34;
+            this.thomasJeffersonTextbox.Text = "0";
+            this.toolTip1.SetToolTip(this.thomasJeffersonTextbox, "Which # President?");
             // 
             // thomasJeffersonRadioButton
             // 
@@ -341,17 +346,17 @@
             this.thomasJeffersonRadioButton.Name = "thomasJeffersonRadioButton";
             this.thomasJeffersonRadioButton.Size = new System.Drawing.Size(109, 17);
             this.thomasJeffersonRadioButton.TabIndex = 33;
-            this.thomasJeffersonRadioButton.TabStop = true;
             this.thomasJeffersonRadioButton.Text = "Thomas Jefferson";
             this.thomasJeffersonRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox10
+            // theodoreRooseveltTextBox
             // 
-            this.textBox10.Location = new System.Drawing.Point(369, 157);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(37, 20);
-            this.textBox10.TabIndex = 32;
-            this.textBox10.Text = "0";
+            this.theodoreRooseveltTextBox.Location = new System.Drawing.Point(369, 157);
+            this.theodoreRooseveltTextBox.Name = "theodoreRooseveltTextBox";
+            this.theodoreRooseveltTextBox.Size = new System.Drawing.Size(37, 20);
+            this.theodoreRooseveltTextBox.TabIndex = 32;
+            this.theodoreRooseveltTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.theodoreRooseveltTextBox, "Which # President?");
             // 
             // theodoreRooseveltRadioButton
             // 
@@ -360,17 +365,17 @@
             this.theodoreRooseveltRadioButton.Name = "theodoreRooseveltRadioButton";
             this.theodoreRooseveltRadioButton.Size = new System.Drawing.Size(122, 17);
             this.theodoreRooseveltRadioButton.TabIndex = 31;
-            this.theodoreRooseveltRadioButton.TabStop = true;
             this.theodoreRooseveltRadioButton.Text = "Theodore Roosevelt";
             this.theodoreRooseveltRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox11
+            // johnAdamsTextBox
             // 
-            this.textBox11.Location = new System.Drawing.Point(369, 134);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(37, 20);
-            this.textBox11.TabIndex = 30;
-            this.textBox11.Text = "0";
+            this.johnAdamsTextBox.Location = new System.Drawing.Point(369, 134);
+            this.johnAdamsTextBox.Name = "johnAdamsTextBox";
+            this.johnAdamsTextBox.Size = new System.Drawing.Size(37, 20);
+            this.johnAdamsTextBox.TabIndex = 30;
+            this.johnAdamsTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.johnAdamsTextBox, "Which # President?");
             // 
             // johnAdamsRadioButton
             // 
@@ -379,17 +384,17 @@
             this.johnAdamsRadioButton.Name = "johnAdamsRadioButton";
             this.johnAdamsRadioButton.Size = new System.Drawing.Size(83, 17);
             this.johnAdamsRadioButton.TabIndex = 29;
-            this.johnAdamsRadioButton.TabStop = true;
             this.johnAdamsRadioButton.Text = "John Adams";
             this.johnAdamsRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox12
+            // georgeWashingtonTextBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(369, 111);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(37, 20);
-            this.textBox12.TabIndex = 28;
-            this.textBox12.Text = "0";
+            this.georgeWashingtonTextBox.Location = new System.Drawing.Point(369, 111);
+            this.georgeWashingtonTextBox.Name = "georgeWashingtonTextBox";
+            this.georgeWashingtonTextBox.Size = new System.Drawing.Size(37, 20);
+            this.georgeWashingtonTextBox.TabIndex = 28;
+            this.georgeWashingtonTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.georgeWashingtonTextBox, "Which # President?");
             // 
             // georgeWashingtonRadioButton
             // 
@@ -398,17 +403,17 @@
             this.georgeWashingtonRadioButton.Name = "georgeWashingtonRadioButton";
             this.georgeWashingtonRadioButton.Size = new System.Drawing.Size(120, 17);
             this.georgeWashingtonRadioButton.TabIndex = 27;
-            this.georgeWashingtonRadioButton.TabStop = true;
             this.georgeWashingtonRadioButton.Text = "George Washington";
             this.georgeWashingtonRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox13
+            // martinVanBurenTextBox
             // 
-            this.textBox13.Location = new System.Drawing.Point(369, 88);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(37, 20);
-            this.textBox13.TabIndex = 26;
-            this.textBox13.Text = "0";
+            this.martinVanBurenTextBox.Location = new System.Drawing.Point(369, 88);
+            this.martinVanBurenTextBox.Name = "martinVanBurenTextBox";
+            this.martinVanBurenTextBox.Size = new System.Drawing.Size(37, 20);
+            this.martinVanBurenTextBox.TabIndex = 26;
+            this.martinVanBurenTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.martinVanBurenTextBox, "Which # President?");
             // 
             // martinVanBurenRadioButton
             // 
@@ -417,17 +422,17 @@
             this.martinVanBurenRadioButton.Name = "martinVanBurenRadioButton";
             this.martinVanBurenRadioButton.Size = new System.Drawing.Size(104, 17);
             this.martinVanBurenRadioButton.TabIndex = 25;
-            this.martinVanBurenRadioButton.TabStop = true;
             this.martinVanBurenRadioButton.Text = "Martin VanBuren";
             this.martinVanBurenRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox14
+            // dwightDEisenhowerTextBox
             // 
-            this.textBox14.Location = new System.Drawing.Point(369, 65);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(37, 20);
-            this.textBox14.TabIndex = 24;
-            this.textBox14.Text = "0";
+            this.dwightDEisenhowerTextBox.Location = new System.Drawing.Point(369, 65);
+            this.dwightDEisenhowerTextBox.Name = "dwightDEisenhowerTextBox";
+            this.dwightDEisenhowerTextBox.Size = new System.Drawing.Size(37, 20);
+            this.dwightDEisenhowerTextBox.TabIndex = 24;
+            this.dwightDEisenhowerTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.dwightDEisenhowerTextBox, "Which # President?");
             // 
             // dwightDEisenhowerRadioButton
             // 
@@ -436,17 +441,17 @@
             this.dwightDEisenhowerRadioButton.Name = "dwightDEisenhowerRadioButton";
             this.dwightDEisenhowerRadioButton.Size = new System.Drawing.Size(127, 17);
             this.dwightDEisenhowerRadioButton.TabIndex = 23;
-            this.dwightDEisenhowerRadioButton.TabStop = true;
             this.dwightDEisenhowerRadioButton.Text = "Dwight D Eisenhower";
             this.dwightDEisenhowerRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox15
+            // ronaldReaganTextBox
             // 
-            this.textBox15.Location = new System.Drawing.Point(369, 42);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(37, 20);
-            this.textBox15.TabIndex = 22;
-            this.textBox15.Text = "0";
+            this.ronaldReaganTextBox.Location = new System.Drawing.Point(369, 42);
+            this.ronaldReaganTextBox.Name = "ronaldReaganTextBox";
+            this.ronaldReaganTextBox.Size = new System.Drawing.Size(37, 20);
+            this.ronaldReaganTextBox.TabIndex = 22;
+            this.ronaldReaganTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.ronaldReaganTextBox, "Which # President?");
             // 
             // ronaldReaganRadioButton
             // 
@@ -455,17 +460,17 @@
             this.ronaldReaganRadioButton.Name = "ronaldReaganRadioButton";
             this.ronaldReaganRadioButton.Size = new System.Drawing.Size(100, 17);
             this.ronaldReaganRadioButton.TabIndex = 21;
-            this.ronaldReaganRadioButton.TabStop = true;
             this.ronaldReaganRadioButton.Text = "Ronald Reagan";
             this.ronaldReaganRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox16
+            // williamMcKinleyTextBox
             // 
-            this.textBox16.Location = new System.Drawing.Point(369, 19);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(37, 20);
-            this.textBox16.TabIndex = 20;
-            this.textBox16.Text = "0";
+            this.williamMcKinleyTextBox.Location = new System.Drawing.Point(369, 19);
+            this.williamMcKinleyTextBox.Name = "williamMcKinleyTextBox";
+            this.williamMcKinleyTextBox.Size = new System.Drawing.Size(37, 20);
+            this.williamMcKinleyTextBox.TabIndex = 20;
+            this.williamMcKinleyTextBox.Text = "0";
+            this.toolTip1.SetToolTip(this.williamMcKinleyTextBox, "Which # President?");
             // 
             // williamMcKinleyRadioButton
             // 
@@ -474,7 +479,6 @@
             this.williamMcKinleyRadioButton.Name = "williamMcKinleyRadioButton";
             this.williamMcKinleyRadioButton.Size = new System.Drawing.Size(104, 17);
             this.williamMcKinleyRadioButton.TabIndex = 19;
-            this.williamMcKinleyRadioButton.TabStop = true;
             this.williamMcKinleyRadioButton.Text = "William McKinley";
             this.williamMcKinleyRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -492,12 +496,16 @@
             this.progressBar1.Location = new System.Drawing.Point(12, 550);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(812, 23);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 37;
             // 
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
-            this.toolTip1.ToolTipTitle = "Which # President?";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
@@ -507,37 +515,37 @@
             this.ControlBox = false;
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.thomasJeffersonTextbox);
             this.Controls.Add(this.thomasJeffersonRadioButton);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.theodoreRooseveltTextBox);
             this.Controls.Add(this.theodoreRooseveltRadioButton);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.johnAdamsTextBox);
             this.Controls.Add(this.johnAdamsRadioButton);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.georgeWashingtonTextBox);
             this.Controls.Add(this.georgeWashingtonRadioButton);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.martinVanBurenTextBox);
             this.Controls.Add(this.martinVanBurenRadioButton);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.dwightDEisenhowerTextBox);
             this.Controls.Add(this.dwightDEisenhowerRadioButton);
-            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.ronaldReaganTextBox);
             this.Controls.Add(this.ronaldReaganRadioButton);
-            this.Controls.Add(this.textBox16);
+            this.Controls.Add(this.williamMcKinleyTextBox);
             this.Controls.Add(this.williamMcKinleyRadioButton);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.johnFKennedyTextBox);
             this.Controls.Add(this.johnFKennedyRadioButton);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.barackObamaTextBox);
             this.Controls.Add(this.barackObamaRadioButton);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.georgeWBushTextBox);
             this.Controls.Add(this.georgeWBushRadioButton);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.franklinPierceTextBox);
             this.Controls.Add(this.franklinPierceRadioButton);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.jamesBuchananTextBox);
             this.Controls.Add(this.jamesBuchananRadioButton);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.williamJClintonTextBox);
             this.Controls.Add(this.williamJClintonRadioButton);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.franklinDRooseveltTextBox);
             this.Controls.Add(this.franklinDRooseveltRadioButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.benjaminHarrisonTextBox);
             this.Controls.Add(this.benjaminHarrisRadioButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox1);
@@ -548,6 +556,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -566,40 +575,41 @@
         private System.Windows.Forms.RadioButton democratFilterRadioButton;
         private System.Windows.Forms.RadioButton allFilterRadioButton;
         private System.Windows.Forms.RadioButton benjaminHarrisRadioButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox benjaminHarrisonTextBox;
+        private System.Windows.Forms.TextBox franklinDRooseveltTextBox;
         private System.Windows.Forms.RadioButton franklinDRooseveltRadioButton;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox williamJClintonTextBox;
         private System.Windows.Forms.RadioButton williamJClintonRadioButton;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox jamesBuchananTextBox;
         private System.Windows.Forms.RadioButton jamesBuchananRadioButton;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox franklinPierceTextBox;
         private System.Windows.Forms.RadioButton franklinPierceRadioButton;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox georgeWBushTextBox;
         private System.Windows.Forms.RadioButton georgeWBushRadioButton;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox barackObamaTextBox;
         private System.Windows.Forms.RadioButton barackObamaRadioButton;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox johnFKennedyTextBox;
         private System.Windows.Forms.RadioButton johnFKennedyRadioButton;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox thomasJeffersonTextbox;
         private System.Windows.Forms.RadioButton thomasJeffersonRadioButton;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox theodoreRooseveltTextBox;
         private System.Windows.Forms.RadioButton theodoreRooseveltRadioButton;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox johnAdamsTextBox;
         private System.Windows.Forms.RadioButton johnAdamsRadioButton;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox georgeWashingtonTextBox;
         private System.Windows.Forms.RadioButton georgeWashingtonRadioButton;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox martinVanBurenTextBox;
         private System.Windows.Forms.RadioButton martinVanBurenRadioButton;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox dwightDEisenhowerTextBox;
         private System.Windows.Forms.RadioButton dwightDEisenhowerRadioButton;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox ronaldReaganTextBox;
         private System.Windows.Forms.RadioButton ronaldReaganRadioButton;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox williamMcKinleyTextBox;
         private System.Windows.Forms.RadioButton williamMcKinleyRadioButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
