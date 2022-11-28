@@ -14,47 +14,52 @@ using System.IO;
 
 namespace Jaaron_Stupid_app
 {
-    public delegate void WonkBarDele(int value);
+    public delegate void MLPRepeat();
     public partial class mlp4Life : Form
     {
+        public Thread thread;
         AreYouOK youOK = new AreYouOK();
         public mlp4Life()
         {
             InitializeComponent();
             pinkiePieButton.MouseEnter += PinkiePieButton__MouseEnter;
             pinkiePieButton.MouseLeave += PinkiePieButton__MouseLeave;
+            this.pinkiePieButton.BringToFront();
             rarity.MouseEnter += new EventHandler(Rarity__MouseEnter);
 
-            Thread thread;
-
-            ThreadStart thread1 = new ThreadStart(mlp);
+            ThreadStart thread1 = new ThreadStart(Mlp);
 
             thread = new Thread(thread1);
-
+            this.FormClosing += new FormClosingEventHandler(Mlp4Life__FormClosing);
             thread.Start();
         }
+
+        private void Mlp4Life__FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //throw new NotImplementedException();
+            thread.Abort();
+        }
+
         private void Rarity__MouseEnter(object sender, EventArgs e)
         {
 
         }
-        public void wonkyBar(int value)
+        public void AnnoyingMusic()
         {
-            crazyBar.Value = value;
+            SoundPlayer MLP= new SoundPlayer(@"MLP.wav");
+            MLP.Play();
         }
-        public void mlp()
+        public void Mlp()
         {
-            WonkBarDele wonkBar;
-            wonkBar = new WonkBarDele(wonkyBar);
+            MLPRepeat mlp;
+            mlp = new MLPRepeat(AnnoyingMusic);
             Random random;
             random= new Random();
+
             while(true)
             {
-                int rand=random.Next(0,10);
-                if (rand < 6)
-                {
-                    Invoke(wonkBar, rand);
-                }
-
+                Invoke(mlp);
+                Thread.Sleep(160000);
             }
         }
 
@@ -70,20 +75,28 @@ namespace Jaaron_Stupid_app
             pinkiePieButton.Visible= false;
             Random random;
             random = new Random();
+
             int randX = random.Next(100,500);
             int randY = random.Next(100,250);
-            pinkiePieButton.Location = new Point(randX,randY);
+
+            int randMove = random.Next(0, 10);
+            if (randMove <= 7)
+            {
+                pinkiePieButton.Location = new Point(randX, randY);
+                pinkiePieButton.Visible= true;
+            }
 
             int randForm = random.Next(0,10);
             if (randForm <= 3)
             {
                 //SoundPlayer sound = new SoundPlayer(@"C:\Windows\Media\Windows Error.wav");
                 //sound.Play();
-                Assembly assembly = Assembly.GetExecutingAssembly();
-                Stream stream = assembly.GetManifestResourceStream("<Program.CS>.Windows Error.wav");
-                SoundPlayer soundPlayer = new SoundPlayer(stream);
+                //Assembly assembly = Assembly.GetExecutingAssembly();
+                //Stream stream = assembly.GetManifestResourceStream("<Program.CS>.Windows Error.wav");
+                SoundPlayer soundPlayer = new SoundPlayer(@"Error.wav");
+                soundPlayer.
                 soundPlayer.Play();
-                youOK.ShowDialog();
+                youOK.Show();
             }
         }
 
@@ -98,6 +111,11 @@ namespace Jaaron_Stupid_app
         }
 
         private void trackBar1_Scroll_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
         {
 
         }
