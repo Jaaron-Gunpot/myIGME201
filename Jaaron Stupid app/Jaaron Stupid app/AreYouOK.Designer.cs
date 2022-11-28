@@ -35,38 +35,43 @@
             // 
             // yes1Button
             // 
-            this.yes1Button.Location = new System.Drawing.Point(42, 99);
+            this.yes1Button.Location = new System.Drawing.Point(28, 64);
+            this.yes1Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.yes1Button.Name = "yes1Button";
-            this.yes1Button.Size = new System.Drawing.Size(75, 46);
+            this.yes1Button.Size = new System.Drawing.Size(50, 30);
             this.yes1Button.TabIndex = 0;
             this.yes1Button.Text = "YES!";
             this.yes1Button.UseVisualStyleBackColor = true;
             // 
             // yes2Button
             // 
-            this.yes2Button.Location = new System.Drawing.Point(178, 99);
+            this.yes2Button.Location = new System.Drawing.Point(119, 64);
+            this.yes2Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.yes2Button.Name = "yes2Button";
-            this.yes2Button.Size = new System.Drawing.Size(75, 48);
+            this.yes2Button.Size = new System.Drawing.Size(50, 31);
             this.yes2Button.TabIndex = 1;
             this.yes2Button.Text = "YES!!";
             this.yes2Button.UseVisualStyleBackColor = true;
             // 
             // questionTextBox
             // 
-            this.questionTextBox.Location = new System.Drawing.Point(42, 30);
+            this.questionTextBox.Location = new System.Drawing.Point(28, 20);
+            this.questionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.questionTextBox.Name = "questionTextBox";
-            this.questionTextBox.Size = new System.Drawing.Size(211, 26);
+            this.questionTextBox.ReadOnly = true;
+            this.questionTextBox.Size = new System.Drawing.Size(142, 20);
             this.questionTextBox.TabIndex = 2;
-            this.questionTextBox.Text = "Are you enjoying yourself?";
+            this.questionTextBox.Text = "ARE YOU HAVING FUN???";
             // 
             // AreYouOK
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 202);
+            this.ClientSize = new System.Drawing.Size(210, 131);
             this.Controls.Add(this.questionTextBox);
             this.Controls.Add(this.yes2Button);
             this.Controls.Add(this.yes1Button);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AreYouOK";
             this.Text = "AreYouOK";
             this.ResumeLayout(false);
