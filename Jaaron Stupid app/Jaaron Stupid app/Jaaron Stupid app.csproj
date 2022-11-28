@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RainbowDash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RainbowDash.Designer.cs">
+      <DependentUpon>RainbowDash.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AreYouOK.resx">
       <DependentUpon>AreYouOK.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Windows Error.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,10 +14,12 @@ using System.IO;
 
 namespace Jaaron_Stupid_app
 {
+
     public delegate void MLPRepeat();
     public partial class mlp4Life : Form
     {
         public Thread thread;
+        SoundPlayer player=new SoundPlayer(@"MLP.wav");
         AreYouOK youOK = new AreYouOK();
         public mlp4Life()
         {
@@ -26,8 +28,11 @@ namespace Jaaron_Stupid_app
             pinkiePieButton.MouseLeave += PinkiePieButton__MouseLeave;
             this.pinkiePieButton.BringToFront();
             rarity.MouseEnter += new EventHandler(Rarity__MouseEnter);
+            this.rainbowDashButton.Click += new EventHandler(RainbowDashButton__Click);
 
             ThreadStart thread1 = new ThreadStart(Mlp);
+
+            player.PlayLooping();
 
             thread = new Thread(thread1);
             this.FormClosing += new FormClosingEventHandler(Mlp4Life__FormClosing);
@@ -42,10 +47,10 @@ namespace Jaaron_Stupid_app
 
         private void Rarity__MouseEnter(object sender, EventArgs e)
         {
-            //remember to uncomment when have acssess to internet
-            //SoundPlayer laugh = new SoundPlayer(@"Rarity.wav");
-            //laugh.Play();
+            SoundPlayer laugh = new SoundPlayer(@"Rarity.wav");
+            laugh.Play();
         }
+
         public void AnnoyingMusic()
         {
             
@@ -116,8 +121,8 @@ namespace Jaaron_Stupid_app
                 }
                 catch
                 {
-                    AreYouOK youOK2 = new AreYouOK();
-                    youOK2.Show();
+                    AreYouOK youOK = new AreYouOK();
+                    youOK.Show();
                 }
             }
         }
