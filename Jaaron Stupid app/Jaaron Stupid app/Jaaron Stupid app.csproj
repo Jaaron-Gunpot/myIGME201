@@ -72,6 +72,12 @@
     <Compile Include="RainbowDash.Designer.cs">
       <DependentUpon>RainbowDash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rarity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rarity.Designer.cs">
+      <DependentUpon>Rarity.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AreYouOK.resx">
       <DependentUpon>AreYouOK.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +113,9 @@
     <Folder Include="files\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Rarity.resx">
+      <DependentUpon>Rarity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows Error.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
