@@ -28,6 +28,7 @@ namespace Jaaron_Stupid_app
             pinkiePieButton.MouseLeave += PinkiePieButton__MouseLeave;
             this.pinkiePieButton.BringToFront();
             rarity.MouseEnter += new EventHandler(Rarity__MouseEnter);
+            this.rarity.Click += new EventHandler(Rarity__Click);
             this.rainbowDashButton.Click += new EventHandler(RainbowDashButton__Click);
 
             ThreadStart thread1 = new ThreadStart(Mlp);
@@ -37,6 +38,39 @@ namespace Jaaron_Stupid_app
             thread = new Thread(thread1);
             this.FormClosing += new FormClosingEventHandler(Mlp4Life__FormClosing);
             thread.Start();
+
+            this.timerBar.Visible = false;
+            this.timerBar.Value = this.timerBar.Maximum;
+
+            this.deathTimer.Interval = 1000;
+            this.deathTimer.Tick += new EventHandler(DeathTimer__Tick);
+            this.deathTimer.Start();
+        }
+
+        private void DeathTimer__Tick(object sender, EventArgs e)
+        {
+            --this.timerBar.Value;
+            if (this.timerBar.Value==0)
+            {
+                this.deathTimer.Stop();
+                Random random= new Random();
+                if (random.Next(10) >= 2)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    this.timerBar.Value = this.timerBar.Maximum;
+                    this.deathTimer.Start();
+                }
+            }
+        }
+
+        private void Rarity__Click(object sender, EventArgs e)
+        {
+            Rarity rarity = new Rarity();
+            
+            rarity.Show();
         }
 
         private void Mlp4Life__FormClosing(object sender, FormClosingEventArgs e)
@@ -49,6 +83,14 @@ namespace Jaaron_Stupid_app
         {
             SoundPlayer laugh = new SoundPlayer(@"Rarity.wav");
             laugh.Play();
+            Thread.Sleep(3000);
+            player.PlayLooping();
+        }
+
+        private void RainbowDashButton__Click(object sender, EventArgs e)
+        {
+            RainbowDash rainbowDash = new RainbowDash();
+            rainbowDash.Show();
         }
 
         public void AnnoyingMusic()
@@ -102,7 +144,6 @@ namespace Jaaron_Stupid_app
             int randForm = random.Next(0,10);
             if (randForm <= 3)
             {
-                AreYouOK youOK = new AreYouOK();
                 //SoundPlayer sound = new SoundPlayer(@"C:\Windows\Media\Windows Error.wav");
                 //sound.Play();
                 //Assembly assembly = Assembly.GetExecutingAssembly();
@@ -121,8 +162,8 @@ namespace Jaaron_Stupid_app
                 }
                 catch
                 {
-                    AreYouOK youOK = new AreYouOK();
-                    youOK.Show();
+                    AreYouOK youOK2= new AreYouOK();
+                    youOK2.Show();
                 }
             }
         }

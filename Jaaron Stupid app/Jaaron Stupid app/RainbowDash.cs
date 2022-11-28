@@ -28,7 +28,9 @@ namespace Jaaron_Stupid_app
             {
 
             }
+            this.webBrowser1.Navigate("https://youtu.be/Xo8mz2xU0nA");
             Thread.Sleep(40000);
+            this.Close();
         }
     }
 }
