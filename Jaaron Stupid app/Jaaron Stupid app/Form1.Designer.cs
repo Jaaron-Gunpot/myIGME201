@@ -42,11 +42,13 @@
             this.crazyBar = new System.Windows.Forms.TrackBar();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.timerBar = new System.Windows.Forms.ProgressBar();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crazyBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             this.SuspendLayout();
             // 
             // pinkiePieButton
@@ -70,9 +72,11 @@
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(100, 211);
+            this.trackBar1.Maximum = 6;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(278, 69);
             this.trackBar1.TabIndex = 5;
+            this.trackBar1.TickFrequency = 0;
             // 
             // twilight
             // 
@@ -127,9 +131,11 @@
             // crazyBar
             // 
             this.crazyBar.Location = new System.Drawing.Point(416, 135);
+            this.crazyBar.Maximum = 6;
             this.crazyBar.Name = "crazyBar";
             this.crazyBar.Size = new System.Drawing.Size(278, 69);
             this.crazyBar.TabIndex = 2;
+            this.crazyBar.TickFrequency = 0;
             // 
             // trackBar2
             // 
@@ -145,11 +151,21 @@
             this.timerBar.Size = new System.Drawing.Size(100, 23);
             this.timerBar.TabIndex = 13;
             // 
+            // trackBar3
+            // 
+            this.trackBar3.Location = new System.Drawing.Point(21, 70);
+            this.trackBar3.Maximum = 6;
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(278, 69);
+            this.trackBar3.TabIndex = 14;
+            this.trackBar3.TickFrequency = 0;
+            // 
             // mlp4Life
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 449);
+            this.Controls.Add(this.trackBar3);
             this.Controls.Add(this.timerBar);
             this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.trackBar5);
@@ -170,6 +186,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.crazyBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,6 +207,7 @@
         private System.Windows.Forms.TrackBar crazyBar;
         private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.ProgressBar timerBar;
+        private System.Windows.Forms.TrackBar trackBar3;
     }
 }
 

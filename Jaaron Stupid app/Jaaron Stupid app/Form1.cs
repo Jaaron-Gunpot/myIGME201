@@ -19,7 +19,7 @@ namespace Jaaron_Stupid_app
     public partial class mlp4Life : Form
     {
         public Thread thread;
-        SoundPlayer player=new SoundPlayer(@"MLP.wav");
+        public static SoundPlayer player=new SoundPlayer(@"MLP.wav");
         AreYouOK youOK = new AreYouOK();
         public mlp4Life()
         {
@@ -93,28 +93,33 @@ namespace Jaaron_Stupid_app
             rainbowDash.Show();
         }
 
-        public void AnnoyingMusic()
+        public void Annoying()
         {
-            
+            Random random = new Random();
+            if (random.Next(1, 10) >= 7)
+            {
+                player.Play();
+            }
+
+            this.BackColor = Color.FromArgb(random.Next(1, 255), random.Next(1, 255), random.Next(1, 255));
         }
         public void Mlp()
         {
-            MLPRepeat mlp;
-            mlp = new MLPRepeat(AnnoyingMusic);
-            //Random random;
-            //random= new Random();
+            MLPRepeat mLPRepeat;
+
+            mLPRepeat = new MLPRepeat(Annoying);
 
             while(true)
             {
-                //try
-                //{
-                //    Invoke(mlp);
-                //    Thread.Sleep(160000);
-                //}
-                //catch
-                //{
-                //    Thread.Sleep(10);
-                //}
+                try
+                {
+                    Invoke(mLPRepeat);
+                    Thread.Sleep(160000);
+                }
+                catch
+                {
+                    Thread.Sleep(10);
+                }
             }
         }
 

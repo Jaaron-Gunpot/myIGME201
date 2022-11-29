@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Jaaron_Stupid_app
 {
     public partial class Rarity : Form
@@ -30,10 +31,11 @@ namespace Jaaron_Stupid_app
             this.pictureBox11.ImageLocation = @"Rarity11.gif";
             this.pictureBox12.ImageLocation = @"Rarity12.gif";
         }
-        public void SpikeTextBox__Click(object sender, EventArgs e)
+        private void SpikeTextBox__Click(object sender, EventArgs e)
         {
             SoundPlayer spike = new SoundPlayer(@"Spike.wav");
             spike.Play();
+            
         }
     }
 }
