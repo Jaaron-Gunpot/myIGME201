@@ -18,7 +18,7 @@ namespace Jaaron_Stupid_app
     public delegate void MLPRepeat();
     public partial class mlp4Life : Form
     {
-        Thread thread;
+        public Thread thread;
         SoundPlayer player=new SoundPlayer(@"MLP.wav");
         AreYouOK youOK = new AreYouOK();
         Random random = new Random();
@@ -118,14 +118,32 @@ namespace Jaaron_Stupid_app
 
             this.BackColor = Color.FromArgb(random.Next(1, 255), random.Next(1, 255), random.Next(1, 255));
         }
+
+        public void PinkBar()
+        {
+            this.pinkiePieTrackBar.Value = random.Next(1, 6);
+        }
+        
         public void Mlp()
         {
             MLPRepeat mLPRepeat;
+
+            MLPRepeat pinkBar;
+
+            pinkBar = new MLPRepeat(PinkBar);
 
             mLPRepeat = new MLPRepeat(Annoying);
 
             while(true)
             {
+                try
+                {
+                    Invoke(pinkBar);
+                }
+                catch
+                {
+
+                }
                 try
                 {
                     Invoke(mLPRepeat);
