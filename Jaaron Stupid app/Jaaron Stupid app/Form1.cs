@@ -33,6 +33,7 @@ namespace Jaaron_Stupid_app
             this.rarity.Click += new EventHandler(Rarity__Click);
             this.rainbowDashButton.Click += new EventHandler(RainbowDashButton__Click);
             this.twilightTrackBar.ValueChanged += new EventHandler(TwilightTrackBar__ValueChanged);
+            this.pinkiePieTrackBar.ValueChanged += new EventHandler(PinkiePieTrackBar__ValueChanged);
 
             ThreadStart thread1 = new ThreadStart(Mlp);
 
@@ -48,6 +49,14 @@ namespace Jaaron_Stupid_app
             this.deathTimer.Interval = 1000;
             this.deathTimer.Tick += new EventHandler(DeathTimer__Tick);
             this.deathTimer.Start();
+        }
+
+        private void PinkiePieTrackBar__ValueChanged(object sender, EventArgs e)
+        {
+            if(this.pinkiePieTrackBar.Value == 2)
+            {
+                this.pinkiePieTrackBar.Visible = false;
+            }
         }
 
         private void TwilightTrackBar__ValueChanged(object sender, EventArgs e)

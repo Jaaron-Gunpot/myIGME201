@@ -53,29 +53,32 @@
             // 
             // pinkiePieButton
             // 
-            this.pinkiePieButton.Location = new System.Drawing.Point(507, 92);
+            this.pinkiePieButton.Location = new System.Drawing.Point(338, 60);
+            this.pinkiePieButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pinkiePieButton.Name = "pinkiePieButton";
-            this.pinkiePieButton.Size = new System.Drawing.Size(87, 38);
+            this.pinkiePieButton.Size = new System.Drawing.Size(58, 25);
             this.pinkiePieButton.TabIndex = 10;
             this.pinkiePieButton.Text = "Pinkie Pie";
             this.pinkiePieButton.UseVisualStyleBackColor = true;
             // 
             // rainbowDashButton
             // 
-            this.rainbowDashButton.Location = new System.Drawing.Point(38, 26);
+            this.rainbowDashButton.Location = new System.Drawing.Point(25, 17);
+            this.rainbowDashButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rainbowDashButton.Name = "rainbowDashButton";
-            this.rainbowDashButton.Size = new System.Drawing.Size(132, 38);
+            this.rainbowDashButton.Size = new System.Drawing.Size(88, 25);
             this.rainbowDashButton.TabIndex = 1;
             this.rainbowDashButton.Text = "Rainbow Dash";
             this.rainbowDashButton.UseVisualStyleBackColor = true;
             // 
             // twilightTrackBar
             // 
-            this.twilightTrackBar.Location = new System.Drawing.Point(100, 211);
+            this.twilightTrackBar.Location = new System.Drawing.Point(67, 137);
+            this.twilightTrackBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.twilightTrackBar.Maximum = 6;
             this.twilightTrackBar.Minimum = 1;
             this.twilightTrackBar.Name = "twilightTrackBar";
-            this.twilightTrackBar.Size = new System.Drawing.Size(278, 69);
+            this.twilightTrackBar.Size = new System.Drawing.Size(185, 45);
             this.twilightTrackBar.TabIndex = 5;
             this.twilightTrackBar.TickFrequency = 0;
             this.twilightTrackBar.TickStyle = System.Windows.Forms.TickStyle.Both;
@@ -83,91 +86,103 @@
             // 
             // twilight
             // 
-            this.twilight.Location = new System.Drawing.Point(171, 168);
+            this.twilight.Location = new System.Drawing.Point(114, 109);
+            this.twilight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.twilight.Name = "twilight";
-            this.twilight.Size = new System.Drawing.Size(142, 38);
+            this.twilight.Size = new System.Drawing.Size(95, 25);
             this.twilight.TabIndex = 4;
             this.twilight.Text = "Twilight Sparkle";
             this.twilight.UseVisualStyleBackColor = true;
             // 
             // applejack
             // 
-            this.applejack.Location = new System.Drawing.Point(476, 168);
+            this.applejack.Location = new System.Drawing.Point(317, 109);
+            this.applejack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.applejack.Name = "applejack";
-            this.applejack.Size = new System.Drawing.Size(118, 38);
+            this.applejack.Size = new System.Drawing.Size(79, 25);
             this.applejack.TabIndex = 6;
             this.applejack.Text = "Applejack";
             this.applejack.UseVisualStyleBackColor = true;
             // 
             // trackBar4
             // 
-            this.trackBar4.Location = new System.Drawing.Point(108, 298);
+            this.trackBar4.Location = new System.Drawing.Point(72, 194);
+            this.trackBar4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Size = new System.Drawing.Size(278, 69);
+            this.trackBar4.Size = new System.Drawing.Size(185, 45);
             this.trackBar4.TabIndex = 9;
             // 
             // rarity
             // 
-            this.rarity.Location = new System.Drawing.Point(248, 254);
+            this.rarity.Location = new System.Drawing.Point(165, 165);
+            this.rarity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rarity.Name = "rarity";
-            this.rarity.Size = new System.Drawing.Size(87, 38);
+            this.rarity.Size = new System.Drawing.Size(58, 25);
             this.rarity.TabIndex = 8;
             this.rarity.Text = "Rarity";
             this.rarity.UseVisualStyleBackColor = true;
             // 
             // trackBar5
             // 
-            this.trackBar5.Location = new System.Drawing.Point(495, 342);
+            this.trackBar5.Location = new System.Drawing.Point(330, 222);
+            this.trackBar5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.trackBar5.Name = "trackBar5";
-            this.trackBar5.Size = new System.Drawing.Size(278, 69);
+            this.trackBar5.Size = new System.Drawing.Size(185, 45);
             this.trackBar5.TabIndex = 11;
             // 
             // fluttershy
             // 
-            this.fluttershy.Location = new System.Drawing.Point(586, 298);
+            this.fluttershy.Location = new System.Drawing.Point(391, 194);
+            this.fluttershy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fluttershy.Name = "fluttershy";
-            this.fluttershy.Size = new System.Drawing.Size(136, 38);
+            this.fluttershy.Size = new System.Drawing.Size(91, 25);
             this.fluttershy.TabIndex = 10;
             this.fluttershy.Text = "Fluttershy";
             this.fluttershy.UseVisualStyleBackColor = true;
             // 
             // pinkiePieTrackBar
             // 
-            this.pinkiePieTrackBar.Location = new System.Drawing.Point(416, 135);
+            this.pinkiePieTrackBar.Location = new System.Drawing.Point(277, 88);
+            this.pinkiePieTrackBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pinkiePieTrackBar.Maximum = 6;
+            this.pinkiePieTrackBar.Minimum = 1;
             this.pinkiePieTrackBar.Name = "pinkiePieTrackBar";
-            this.pinkiePieTrackBar.Size = new System.Drawing.Size(278, 69);
+            this.pinkiePieTrackBar.Size = new System.Drawing.Size(185, 45);
             this.pinkiePieTrackBar.TabIndex = 2;
             this.pinkiePieTrackBar.TickFrequency = 0;
+            this.pinkiePieTrackBar.Value = 1;
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(416, 211);
+            this.trackBar2.Location = new System.Drawing.Point(277, 137);
+            this.trackBar2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(278, 69);
+            this.trackBar2.Size = new System.Drawing.Size(185, 45);
             this.trackBar2.TabIndex = 12;
             // 
             // timerBar
             // 
-            this.timerBar.Location = new System.Drawing.Point(34, 412);
+            this.timerBar.Location = new System.Drawing.Point(23, 268);
+            this.timerBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.timerBar.Name = "timerBar";
-            this.timerBar.Size = new System.Drawing.Size(100, 23);
+            this.timerBar.Size = new System.Drawing.Size(67, 15);
             this.timerBar.TabIndex = 13;
             // 
             // trackBar3
             // 
-            this.trackBar3.Location = new System.Drawing.Point(21, 71);
+            this.trackBar3.Location = new System.Drawing.Point(14, 46);
+            this.trackBar3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.trackBar3.Maximum = 6;
             this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(278, 69);
+            this.trackBar3.Size = new System.Drawing.Size(185, 45);
             this.trackBar3.TabIndex = 14;
             this.trackBar3.TickFrequency = 0;
             // 
             // mlp4Life
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 449);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.trackBar3);
             this.Controls.Add(this.timerBar);
             this.Controls.Add(this.trackBar2);
@@ -181,6 +196,7 @@
             this.Controls.Add(this.pinkiePieTrackBar);
             this.Controls.Add(this.rainbowDashButton);
             this.Controls.Add(this.pinkiePieButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "mlp4Life";
             this.Text = "MLP";

@@ -35,7 +35,6 @@ namespace Jaaron_Stupid_app
         {
             SoundPlayer spike = new SoundPlayer(@"Spike.wav");
             spike.Play();
-            
         }
     }
 }
