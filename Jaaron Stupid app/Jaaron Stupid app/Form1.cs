@@ -18,18 +18,21 @@ namespace Jaaron_Stupid_app
     public delegate void MLPRepeat();
     public partial class mlp4Life : Form
     {
-        public Thread thread;
-        public static SoundPlayer player=new SoundPlayer(@"MLP.wav");
+        Thread thread;
+        SoundPlayer player=new SoundPlayer(@"MLP.wav");
         AreYouOK youOK = new AreYouOK();
+        Random random = new Random();
         public mlp4Life()
         {
             InitializeComponent();
-            pinkiePieButton.MouseEnter += PinkiePieButton__MouseEnter;
-            pinkiePieButton.MouseLeave += PinkiePieButton__MouseLeave;
+            //adds event handlers to move the pinke pie button around sometimes
+            pinkiePieButton.MouseEnter += new EventHandler(PinkiePieButton__MouseEnter);
+            pinkiePieButton.MouseLeave += new EventHandler(PinkiePieButton__MouseLeave);
             this.pinkiePieButton.BringToFront();
             rarity.MouseEnter += new EventHandler(Rarity__MouseEnter);
             this.rarity.Click += new EventHandler(Rarity__Click);
             this.rainbowDashButton.Click += new EventHandler(RainbowDashButton__Click);
+            this.twilightTrackBar.ValueChanged += new EventHandler(TwilightTrackBar__ValueChanged);
 
             ThreadStart thread1 = new ThreadStart(Mlp);
 
@@ -47,13 +50,26 @@ namespace Jaaron_Stupid_app
             this.deathTimer.Start();
         }
 
+        private void TwilightTrackBar__ValueChanged(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if(this.twilightTrackBar.Value == 1)
+            {
+                this.timerBar.Enabled = false;
+            }
+            if (random.Next(1, 10) >= 6)
+            {
+                this.twilightTrackBar.Value=random.Next(2, 6);
+            }
+        }
+
         private void DeathTimer__Tick(object sender, EventArgs e)
         {
             --this.timerBar.Value;
             if (this.timerBar.Value==0)
             {
                 this.deathTimer.Stop();
-                Random random= new Random();
+               
                 if (random.Next(10) >= 2)
                 {
                     this.Close();
@@ -95,7 +111,6 @@ namespace Jaaron_Stupid_app
 
         public void Annoying()
         {
-            Random random = new Random();
             if (random.Next(1, 10) >= 7)
             {
                 player.Play();
@@ -114,7 +129,7 @@ namespace Jaaron_Stupid_app
                 try
                 {
                     Invoke(mLPRepeat);
-                    Thread.Sleep(160000);
+                    Thread.Sleep(2500);
                 }
                 catch
                 {
@@ -133,8 +148,6 @@ namespace Jaaron_Stupid_app
         {
             //throw new NotImplementedException();
             pinkiePieButton.Visible= false;
-            Random random;
-            random = new Random();
 
             int randX = random.Next(100,500);
             int randY = random.Next(100,250);

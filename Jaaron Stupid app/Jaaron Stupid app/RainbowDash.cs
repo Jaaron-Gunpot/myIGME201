@@ -29,7 +29,11 @@ namespace Jaaron_Stupid_app
 
             }
             this.webBrowser1.Navigate("https://youtu.be/Xo8mz2xU0nA");
-            Thread.Sleep(40000);
+            this.webBrowser1.Navigated += new WebBrowserNavigatedEventHandler(WebBrowser1__Navigated);
+        }
+        public void WebBrowser1__Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            Thread.Sleep(50000);
             this.Close();
         }
     }

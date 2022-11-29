@@ -113,6 +113,9 @@
     <Folder Include="files\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="RainbowDash.resx">
+      <DependentUpon>RainbowDash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rarity.resx">
       <DependentUpon>Rarity.cs</DependentUpon>
     </EmbeddedResource>
