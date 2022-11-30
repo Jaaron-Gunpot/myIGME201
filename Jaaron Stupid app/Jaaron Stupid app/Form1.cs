@@ -52,10 +52,27 @@ namespace Jaaron_Stupid_app
             this.deathTimer.Interval = 1000;
             this.deathTimer.Tick += new EventHandler(DeathTimer__Tick);
             this.deathTimer.Start();
+
+            this.webBrowser1.SendToBack();
+            this.webBrowser1.Visible = false;
+            //this.webBrowser1.IsWebBrowserContextMenuEnabled = false;
+        }
+
+        public void Finish()
+        {
+            thread.Abort();
+            this.webBrowser1.BringToFront();
+            this.webBrowser1.Visible = true;
+            this.webBrowser1.Navigate("https://www.youtube.com/watch?v=DOmdB7D-pUU");
+            //this.webBrowser1.IsWebBrowserContextMenuEnabled = false;
         }
 
         private void Checker()
         {
+            MLPRepeat finish;
+
+            finish = new MLPRepeat(Finish);
+
             while (true)
             {
                 foreach(bool correct in finished)
@@ -65,6 +82,7 @@ namespace Jaaron_Stupid_app
                         break;
                     }
                     //invoke a delegate method here after checking all for celebration
+                    Invoke(finish);
                 }
             }
         }
