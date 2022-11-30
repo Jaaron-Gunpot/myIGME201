@@ -19,9 +19,11 @@ namespace Jaaron_Stupid_app
     public partial class mlp4Life : Form
     {
         public Thread thread;
+        Thread checkThread;
         SoundPlayer player=new SoundPlayer(@"MLP.wav");
         AreYouOK youOK = new AreYouOK();
         Random random = new Random();
+        bool[] finished = { false, false, false, false, false, false };
         public mlp4Life()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace Jaaron_Stupid_app
             this.pinkiePieTrackBar.ValueChanged += new EventHandler(PinkiePieTrackBar__ValueChanged);
 
             ThreadStart thread1 = new ThreadStart(Mlp);
+            ThreadStart threadStart = new ThreadStart(Checker);
 
             player.PlayLooping();
 
@@ -45,16 +48,32 @@ namespace Jaaron_Stupid_app
 
             this.timerBar.Visible = false;
             this.timerBar.Value = this.timerBar.Maximum;
-
+           
             this.deathTimer.Interval = 1000;
             this.deathTimer.Tick += new EventHandler(DeathTimer__Tick);
             this.deathTimer.Start();
+        }
+
+        private void Checker()
+        {
+            while (true)
+            {
+                foreach(bool correct in finished)
+                {
+                    if (!correct)
+                    {
+                        break;
+                    }
+                    //invoke a delegate method here after checking all for celebration
+                }
+            }
         }
 
         private void PinkiePieTrackBar__ValueChanged(object sender, EventArgs e)
         {
             if(this.pinkiePieTrackBar.Value == 2)
             {
+                finished[this.pinkiePieTrackBar.Value - 1] = true;
                 this.pinkiePieTrackBar.Visible = false;
             }
         }
@@ -64,6 +83,7 @@ namespace Jaaron_Stupid_app
             //throw new NotImplementedException();
             if(this.twilightTrackBar.Value == 1)
             {
+                finished[this.twilightTrackBar.Value - 1] = true;
                 this.timerBar.Enabled = false;
             }
             if (random.Next(1, 10) >= 6)
@@ -156,7 +176,7 @@ namespace Jaaron_Stupid_app
                 try
                 {
                     Invoke(mLPRepeat);
-                    Thread.Sleep(2500);
+                    Thread.Sleep(25000);
                 }
                 catch
                 {
