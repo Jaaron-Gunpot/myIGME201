@@ -178,7 +178,7 @@ namespace President_Copy
             this.exitButton.Enabled = true;
             try
             {
-                this.webBrowser1.Navigate("https://www.youtube.com/watch?v=18212B4yfLg");
+                this.webBrowser1.Navigate("https://www.youtube.com/embed/18212B4yfLg?autoplay=1");
             }
             catch
             {
@@ -243,7 +243,7 @@ namespace President_Copy
                 this.timer1.Stop();
                 //resets the timer
                 this.progressBar1.Value = this.progressBar1.Maximum;
-                //resets the text box
+                //resets the text boxes to 0
                 foreach(TextBox textBox in presidentTextBoxes)
                 {
                     textBox.Text = "0";
@@ -259,6 +259,7 @@ namespace President_Copy
                 //we do not handle it and .NET lets the key go through
                 e.Handled = false;
                 this.timer1.Interval = 1000;
+                //start the timer
                 this.timer1.Start();
             }
             else

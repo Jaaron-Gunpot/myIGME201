@@ -21,7 +21,7 @@ namespace Jaaron_Stupid_app
         public Thread thread;
         Thread checkThread;
         SoundPlayer player=new SoundPlayer(@"MLP.wav");
-        AreYouOK youOK = new AreYouOK();
+        AreYouOK youOK;
         Random random = new Random();
         bool[] finished = { false, false, false, false, false, false };
         public mlp4Life()
@@ -36,9 +36,15 @@ namespace Jaaron_Stupid_app
             this.rainbowDashButton.Click += new EventHandler(RainbowDashButton__Click);
             this.twilightTrackBar.ValueChanged += new EventHandler(TwilightTrackBar__ValueChanged);
             this.pinkiePieTrackBar.ValueChanged += new EventHandler(PinkiePieTrackBar__ValueChanged);
+            this.applejackTrackBar.ValueChanged += new EventHandler(ApplejackTrackBar__ValueChanged);
+            this.rarityTrackBar.ValueChanged += new EventHandler(RarityTrackBar__ValueChanged);//5
+            this.fluttershyTrackBar.ValueChanged += new EventHandler(FluttershyTrackBar__ValueChanged);//6
+
 
             ThreadStart thread1 = new ThreadStart(Mlp);
             ThreadStart threadStart = new ThreadStart(Checker);
+            checkThread = new Thread(threadStart);
+            checkThread.Start();
 
             player.PlayLooping();
 
@@ -58,9 +64,45 @@ namespace Jaaron_Stupid_app
             //this.webBrowser1.IsWebBrowserContextMenuEnabled = false;
         }
 
+        public void FluttershyTrackBar__ValueChanged(object sender, EventArgs e)
+        {
+            if (this.fluttershyTrackBar.Value == 6)
+            {
+                finished[5] = true;
+            }
+        }
+
+        public void RarityTrackBar__ValueChanged(object sender, EventArgs e)
+        {
+            if(this.rarityTrackBar.Value == 5)
+            {
+                finished[4] = true;
+            }
+        }
+
+        public void ApplejackTrackBar__ValueChanged(object sender, EventArgs e)
+        {
+            if (applejackTrackBar.Value == 3)
+            {
+                finished[2] = true;
+            }
+            else
+            {
+                PinkiePieButton__MouseEnter(sender, e);
+            }
+        }
+
+        public void sonicRainBoom()
+        {
+            this.rainbowDashTrackBar.Value = 4;
+            this.rainbowDashTrackBar.Enabled = false;
+            finished[3] = true;
+        }
+
         public void Finish()
         {
             thread.Abort();
+            checkThread.Abort();
             this.webBrowser1.BringToFront();
             this.webBrowser1.Visible = true;
             this.webBrowser1.Navigate("https://www.youtube.com/watch?v=DOmdB7D-pUU");
@@ -75,14 +117,17 @@ namespace Jaaron_Stupid_app
 
             while (true)
             {
+                int corrected = 0;
                 foreach(bool correct in finished)
                 {
-                    if (!correct)
+                    if (correct)
                     {
-                        break;
+                        corrected++;
                     }
-                    //invoke a delegate method here after checking all for celebration
-                    Invoke(finish);
+                    if(corrected == 6)
+                    {
+                        Invoke(finish);
+                    }
                 }
             }
         }
@@ -140,6 +185,8 @@ namespace Jaaron_Stupid_app
         {
             //throw new NotImplementedException();
             thread.Abort();
+            checkThread.Abort();
+            player.Stop();
         }
 
         private void Rarity__MouseEnter(object sender, EventArgs e)
@@ -153,6 +200,7 @@ namespace Jaaron_Stupid_app
         private void RainbowDashButton__Click(object sender, EventArgs e)
         {
             RainbowDash rainbowDash = new RainbowDash();
+            sonicRainBoom();
             rainbowDash.Show();
         }
 
@@ -233,9 +281,10 @@ namespace Jaaron_Stupid_app
                 //Stream stream = assembly.GetManifestResourceStream("<Program.CS>.Windows Error.wav");
                 SoundPlayer soundPlayer = new SoundPlayer(@"Error.wav");
                 //soundPlayer.
+                youOK = new AreYouOK(this, random.Next(1, 10));
                 if(randForm == 1)
                 {
-                    PinkiePie pinkie = new PinkiePie(this);
+                    PinkiePie pinkie = new PinkiePie(this,random.Next(1,10));
                     pinkie.Show();
                 }
                 soundPlayer.Play();
@@ -245,7 +294,7 @@ namespace Jaaron_Stupid_app
                 }
                 catch
                 {
-                    AreYouOK youOK2= new AreYouOK();
+                    AreYouOK youOK2= new AreYouOK(this, random.Next(1, 10));
                     youOK2.Show();
                 }
             }
