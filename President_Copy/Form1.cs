@@ -178,7 +178,7 @@ namespace President_Copy
             this.exitButton.Enabled = true;
             try
             {
-                this.webBrowser1.Navigate("https://www.youtube.com/watch?v=18212B4yfLg");
+                this.webBrowser1.Navigate("https://www.youtube.com/embed/18212B4yfLg?autoplay=1");
             }
             catch
             {

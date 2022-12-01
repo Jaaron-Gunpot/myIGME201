@@ -39,6 +39,8 @@ namespace Jaaron_Stupid_app
 
             ThreadStart thread1 = new ThreadStart(Mlp);
             ThreadStart threadStart = new ThreadStart(Checker);
+            checkThread = new Thread(threadStart);
+            checkThread.Start();
 
             player.PlayLooping();
 
