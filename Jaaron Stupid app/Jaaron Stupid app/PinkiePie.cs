@@ -12,9 +12,14 @@ namespace Jaaron_Stupid_app
 {
     public partial class PinkiePie : Form
     {
-        public PinkiePie(Form owner)
+        
+        public PinkiePie(Form owner, int amount)
         {
             InitializeComponent();
+            for(int i = 0; i < amount; i++)
+            {
+                InitializeComponent();
+            }
             this.Owner = owner;
             this.ponyPictureBox.ImageLocation = @"Pinkie_Pie.png";
             //makes picture fit into the picture box

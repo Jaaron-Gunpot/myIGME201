@@ -12,12 +12,17 @@ namespace Jaaron_Stupid_app
 {
     public partial class AreYouOK : Form
     {
-        public AreYouOK()
+        public AreYouOK(Form owner, int amount)
         {
             InitializeComponent();
-
-            //this.Owner = owner;
-            //CenterToParent();
+            this.Owner = owner;
+            for (int i = 0; i < amount; i++)
+            {
+                InitializeComponent();
+            }
+            //vAmount = amount;
+            this.Owner = owner;
+            CenterToParent();
 
             this.yes1Button.Click += Yes1Button__Click;
             this.yes2Button.Click += new EventHandler(Yes1Button__Click);
