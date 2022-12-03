@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using LinkedListVisualizer;
+using System.Runtime.CompilerServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Security.Claims;
 
 namespace LinkedList
 {
@@ -196,8 +199,11 @@ namespace LinkedList
             LinkedListNode<object> linkedListNode;
 
             // 4. Your code here
+            linkedListNode = linkedList.Last;
+
             while (linkedListNode != null)
             {
+                reverseLinkedList.AddLast(linkedListNode.Value);
                 linkedListNode = linkedListNode.Previous;
             }
 
@@ -214,15 +220,27 @@ namespace LinkedList
             string[] sentence = null;
 
             // 2. Your code here
+            sentence = new string[] { "the", "fox", "jumped", "over", "the", "dog" };
+            linkedList = new LinkedList<object>(sentence);
 
             // 3. add "quick" and "brown" before "fox"
 
             // 4. Your code here
-
+            linkedListNode = linkedList.Find("fox");
+            linkedList.AddBefore(linkedListNode, "quick");
+            linkedList.AddBefore(linkedListNode, "brown");
             // 5. using example #8, add "lazy" after the last "the"
-            
-            // 6. Your code here
 
+            // 6. Your code here
+            LinkedListNode<object> target = linkedList.FindLast("the");
+            if (target == null)
+            {
+                // "the" is not found
+            }
+            else
+            {
+                linkedList.AddAfter(target, "lazy");
+            }
             // 7. then call the visualizer
             VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(linkedList);
         }
@@ -237,8 +255,8 @@ namespace LinkedList
             string[] s = null;
 
             // 2. Your code here
-
-
+            s = new string[] {"Because", "I'm", "sad", "Clap", "along", "if", "you", "feel", "like", "a", "room", "without", "a", "roof", "Because", "I'm", "sad", "Clap", "along", "if", "you", "feel", "like", "sadness", "is", "the", "truth", "sad"};
+            linkedList = new LinkedList<object>(s);
             // 3. replace "sad" with "happy"
             // and "sadness with "happiness"
             // note that because Value is an object 
@@ -246,7 +264,20 @@ namespace LinkedList
             //     if( (string)linkedListNode.Value == "sad"
 
             // 4. Your code here
+            linkedListNode = linkedList.First;
 
+            while (linkedListNode != null)
+            {
+                if((string)linkedListNode.Value == "sad")
+                {
+                    linkedListNode.Value = "happy";
+                }
+                if((string)linkedListNode.Value== "sadness")
+                {
+                    linkedListNode.Value = "happiness";
+                }
+                linkedListNode = linkedListNode.Next;
+            }
 
             // 5. then call the visualizer
             VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(linkedList);
@@ -262,14 +293,18 @@ namespace LinkedList
             string[] s = null;
 
             // 2. Your code here
-
-
+            s = new string[] { "The", "Spain", "in", "rain", "falls", "plain", "on", "the", "mainly" };
+            linkedList = new LinkedList<object>(s);
             // 3. manipulate the list using Find(), Remove(), AddBefore() and/or AddAfter() to result in
             // "The rain in Spain falls mainly on the plain"
             // your Add methods must use 2 LinkedListNode arguments like examples #13 and #14 
             // you may not use string arguments in your Add method calls
 
             // 4. Your code here
+            linkedListNode1 = linkedList.Find("Spain");
+            linkedListNode2 = linkedList.Find("rain");
+            linkedList.Remove(linkedListNode2);
+            linkedList.AddBefore(linkedListNode1 , linkedListNode2);
 
 
             // 5. then call the visualizer
