@@ -305,6 +305,16 @@ namespace LinkedList
             linkedListNode2 = linkedList.Find("rain");
             linkedList.Remove(linkedListNode2);
             linkedList.AddBefore(linkedListNode1 , linkedListNode2);
+            linkedList.Remove(linkedListNode1);
+            linkedListNode2 = linkedList.Find("in");
+            linkedList.AddAfter(linkedListNode2 , linkedListNode1);
+            linkedListNode1 = linkedList.Find("plain");
+            linkedList.Remove(linkedListNode1);
+            linkedList.AddLast(linkedListNode1);
+            linkedListNode1 = linkedList.Find("mainly");
+            linkedListNode2 = linkedList.Find("falls");
+            linkedList.Remove(linkedListNode1);
+            linkedList.AddAfter(linkedListNode2, linkedListNode1);
 
 
             // 5. then call the visualizer
@@ -324,7 +334,27 @@ namespace LinkedList
             // you may not use string arguments in your Add method calls
 
             // Your code here
+            linkedListNode1 = anagram.Find("M");
+            anagram.Remove(linkedListNode1);
+            anagram.AddLast(linkedListNode1);
 
+            linkedListNode1 = anagram.Find("I");
+            linkedListNode2 = anagram.Find("D");
+            anagram.Remove(linkedListNode1);
+            anagram.AddAfter(linkedListNode2, linkedListNode1);
+
+            linkedListNode1 = anagram.Find("Y");
+            linkedListNode2 = anagram.Find("T");
+            anagram.Remove(linkedListNode1);
+            anagram.AddAfter(linkedListNode2 , linkedListNode1);
+
+            linkedListNode1 = anagram.Find("O");
+            linkedListNode2 = anagram.FindLast("O");
+            anagram.Remove(linkedListNode1);
+            anagram.AddAfter(linkedListNode2, linkedListNode1);
+            linkedListNode1 = anagram.FindLast("R");
+            anagram.Remove(linkedListNode1);
+            anagram.AddBefore(linkedListNode2, linkedListNode1);
             // then call the visualizer
             VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(anagram);
         }
