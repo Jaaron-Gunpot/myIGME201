@@ -167,7 +167,15 @@ namespace BTree
             this.richTextBox.Clear();
 
             // Your code here
+            for (int i = 0; i < 30; ++i)
+            {
+                node = new BTree(random.Next(1,52), root);
 
+                if (i == 0)
+                {
+                    root = node;
+                }
+            }
 
             this.richTextBox.Text += "\n";
 

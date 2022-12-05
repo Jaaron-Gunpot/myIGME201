@@ -12,6 +12,7 @@ namespace Stacker
         {
             int[] ints = { 1, 2, 3 };
             MyStack myStack = new MyStack(ints);
+            MyQueue myQueue = new MyQueue(ints);
             //while (true){}
         }
     }
@@ -26,16 +27,31 @@ namespace Stacker
         {
             stack.Add(n);
         }
-        public int Pop()
+        public int? Pop()
         {
-            int top = stack.ElementAt(stack.Count - 1);
-            stack.RemoveAt(stack.Count - 1);
-            return top;
+            if(stack.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                int top = stack.ElementAt(stack.Count - 1);
+                stack.RemoveAt(stack.Count - 1);
+                return top;
+            }
         }
-        public int Peek()
+        public int? Peek()
         {
-            int top = stack.ElementAt(stack.Count - 1);
-            return top;
+            if(stack.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                int top = stack.ElementAt(stack.Count - 1);
+                return top;
+            }
+
         }
     }
     class MyQueue
@@ -47,13 +63,22 @@ namespace Stacker
         }
         public void EnQueue(int n)
         {
-            queue.Reverse();
-            queue.Add(n);
-            queue.Reverse();
+            queue.Insert(0, n);
+            //queue.Reverse();
+            //queue.Add(n);
+            //queue.Reverse();
         }
-        public int Peek()
+        public int? Peek()
         {
-            return queue.ElementAt(queue.Count - 1);
+            if(queue.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return queue[0];
+            }
+            //return queue.ElementAt(queue.Count - 1);
         }
         public int DeQueue()
         {
