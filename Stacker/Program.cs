@@ -80,11 +80,18 @@ namespace Stacker
             }
             //return queue.ElementAt(queue.Count - 1);
         }
-        public int DeQueue()
+        public int? DeQueue()
         {
-            int front = queue.ElementAt(queue.Count - 1);
-            queue.Remove(queue.ElementAt(queue.Count - 1));
-            return front;
+            if(queue.Count > 0)
+            {
+                int top = queue[0];
+                queue.RemoveAt(0);
+                return top;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
