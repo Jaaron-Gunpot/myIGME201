@@ -83,7 +83,7 @@ namespace Color_Graph
         {
             /*red 0*/new int[] {(int)EColor.Gray,(int)EColor.DarkBlue},
             /*light-blue 1*/new int[] {(int)EColor.Gray,(int)EColor.DarkBlue},
-            /*gray 2*/new int[] {(int)EColor.lightBlue},
+            /*gray 2*/new int[] {(int)EColor.lightBlue,(int)EColor.Orange},
             /*dark blue 3*/new int[]{ (int)EColor.lightBlue,(int)EColor.Yellow},
             /*yellow 4*/new int[]{(int)EColor.Green},
             /*orange 5*/new int[]{(int)EColor.Purple},
@@ -95,14 +95,13 @@ namespace Color_Graph
         {
             /*red*/new int[] {5, 1},
             /*light-blue*/new int[] {0, 1},
-            /*gray*/new int[] {0},
+            /*gray*/new int[] {0,1},
             /*dark blue*/new int[]{1, 8},
             /*yellow*/new int[]{6},
             /*orange*/new int[]{1},
             /*purple*/new int[]{1},
             /*green*/null
         };
-        static string currentColor = "Red";
         public static List<Node> colors = new List<Node>();
 
         static void Main(string[] args)
@@ -134,32 +133,40 @@ namespace Color_Graph
             node = new Node(EColor.Green);//7
             colors.Add(node);
 
-            colors[0].AddEdge(1, colors[3]);
-            colors[0].AddEdge(5, colors[2]);
-            colors[0].edges.Sort();
+            colors[(int)EColor.Red].AddEdge(1, colors[(int)EColor.DarkBlue]);
+            colors[(int)EColor.Red].AddEdge(5, colors[(int)EColor.Gray]);
+            colors[(int)EColor.Red].edges.Sort();
 
-            colors[1].AddEdge(0, colors[2]);
-            colors[1].AddEdge(1, colors[3]);
-            colors[1].edges.Sort();
+            colors[(int)EColor.lightBlue].AddEdge(0, colors[(int)EColor.Gray]);
+            colors[(int)EColor.lightBlue].AddEdge(1, colors[(int)EColor.DarkBlue]);
+            colors[(int)EColor.lightBlue].edges.Sort();
 
-            colors[2].AddEdge(0, colors[1]);
-            colors[2].AddEdge(1, colors[5]);
-            colors[2].edges.Sort();
+            colors[(int)EColor.Gray].AddEdge(0, colors[(int)EColor.lightBlue]);
+            colors[(int)EColor.Gray].AddEdge(1, colors[(int)EColor.Orange]);
+            colors[(int)EColor.Gray].edges.Sort();
 
-            colors[3].AddEdge(1, colors[1]);
-            colors[3].AddEdge(8, colors[4]);
-            colors[3].edges.Sort();
+            colors[(int)EColor.DarkBlue].AddEdge(1, colors[(int)EColor.lightBlue]);
+            colors[(int)EColor.DarkBlue].AddEdge(8, colors[(int)EColor.Yellow]);
+            colors[(int)EColor.DarkBlue].edges.Sort();
 
-            colors[4].AddEdge(6, colors[7]);
-            colors[4].edges.Sort();
+            colors[(int)EColor.Yellow].AddEdge(6, colors[7]);
+            colors[(int)EColor.Yellow].edges.Sort();
 
-            colors[5].AddEdge(1, colors[6]);
-            colors[5].edges.Sort();
+            colors[(int)EColor.Orange].AddEdge(1, colors[(int)EColor.Purple]);
+            colors[(int)EColor.Orange].edges.Sort();
 
-            colors[6].AddEdge(1, colors[4]);
-            colors[6].edges.Sort();
+            colors[(int)EColor.Purple].AddEdge(1, colors[(int)EColor.Yellow]);
+            colors[(int)EColor.Purple].edges.Sort();
 
+            Console.WriteLine("Depth First Search");
             DFS(EColor.Red);
+
+            Console.WriteLine("Get Shortest Path Dijkstra");
+            foreach (Node color in GetShortestPathDijkstra())
+            {
+                
+                Console.WriteLine(color.nState.ToString());
+            }
         }
 
         static void DFS(EColor eState)
@@ -173,7 +180,7 @@ namespace Color_Graph
         {
             visited[(int)v] = true;
 
-            Console.WriteLine(v.ToString() + "");
+            Console.WriteLine(v.ToString());
 
             int[] thisStateList = colorList[(int)v];
 
@@ -188,7 +195,112 @@ namespace Color_Graph
                 }
             }
         }
+        /****************************************************************************************
+       The Dijkstra algorithm was discovered in 1959 by Edsger Dijkstra.
+       This is how it works:
 
+       1. From the start node, add all connected nodes to a priority queue.
+       2. Sort the priority queue by lowest cost and make the first node the current node.
+          For every child node, select the shortest path to start.
+          When all edges have been investigated from a node, that node is "Visited" 
+          and you don´t need to go there again.
+       3. Add each child node connected to the current node to the priority queue.
+       4. Go to step 2 until the queue is empty.
+       5. Recursively create a list of each node that defines the shortest path 
+          from end to start.
+       6. Reverse the list and you have found the shortest path
+
+       In other words, recursively for every child of a node, measure its distance to the start. 
+       Store the distance and what node led to the shortest path to start. When you reach the end 
+       node, recursively go back to the start the shortest way, reverse that list and you have the 
+       shortest path.
+       ******************************************************************************************/
+
+        static public List<Node> GetShortestPathDijkstra()
+        {
+            DijkstraSearch();
+            List<Node> shortestPath = new List<Node>();
+            shortestPath.Add(colors[(int)EColor.Green]);
+            BuildShortestPath(shortestPath, colors[(int)EColor.Green]);
+            shortestPath.Reverse();
+            return (shortestPath);
+        }
+
+        static private void BuildShortestPath(List<Node> list, Node node)
+        {
+            if (node.nearestToStart == null)
+            {
+                return;
+            }
+
+            list.Add(node.nearestToStart);
+            BuildShortestPath(list, node.nearestToStart);
+        }
+
+
+        static private int NodeOrderBy(Node n)
+        {
+            return n.minCostToStart;
+        }
+
+        static private void DijkstraSearch()
+        {
+            Node start = colors[(int)EColor.Red];
+
+            start.minCostToStart = 0;
+            List<Node> prioQueue = new List<Node>();
+            prioQueue.Add(start);
+
+            //Func<Node, int> nodeOrderBy = new Func<Node, int>(NodeOrderBy);
+            Func<Node, int> nodeOrderBy = NodeOrderBy;
+
+            do
+            {
+                // sort our prioQueue by minCostToStart
+                // option #1, use .Sort() which sorts in place
+                prioQueue.Sort();
+
+                // option #2, use .OrderBy() with a delegate method or lambda expression 
+                // the next 6 lines are equivalent from descriptive to abbreviated:
+                prioQueue = prioQueue.OrderBy(nodeOrderBy).ToList();
+                prioQueue = prioQueue.OrderBy(delegate (Node n) { return n.minCostToStart; }).ToList();
+                prioQueue = prioQueue.OrderBy((Node n) => { return n.minCostToStart; }).ToList();
+                prioQueue = prioQueue.OrderBy((n) => { return n.minCostToStart; }).ToList();
+                prioQueue = prioQueue.OrderBy((n) => n.minCostToStart).ToList();
+                prioQueue = prioQueue.OrderBy(n => n.minCostToStart).ToList();
+
+                Node node = prioQueue.First();
+                prioQueue.Remove(node);
+                foreach (Edge cnn in //node.edges)
+                         node.edges.OrderBy(delegate (Edge n) { return n.cost; }))
+                {
+                    Node childNode = cnn.connectedNode;
+                    if (childNode.visited)
+                    {
+                        continue;
+                    }
+
+                    if (childNode.minCostToStart == int.MaxValue ||
+                        node.minCostToStart + cnn.cost < childNode.minCostToStart)
+                    {
+                        childNode.minCostToStart = node.minCostToStart + cnn.cost;
+                        childNode.nearestToStart = node;
+                        if (!prioQueue.Contains(childNode))
+                        {
+                            prioQueue.Add(childNode);
+                        }
+                    }
+                }
+
+                node.visited = true;
+
+                // if we reeached our target
+                if (node == colors[(int)EColor.Green])
+                {
+                    return;
+                }
+            } while (prioQueue.Any());
+        }
     }
 }
 
