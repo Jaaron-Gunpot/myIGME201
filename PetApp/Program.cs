@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace PetApp
 {
@@ -104,7 +105,7 @@ namespace PetApp
     {
         public override void Eat()
         {
-            Console.WriteLine(this.Name+ ":Nom Nom Meow");
+            Console.WriteLine(this.Name + ":Nom Nom Meow");
         }
         public override void Play()
         {
@@ -154,6 +155,10 @@ namespace PetApp
         {
             Console.WriteLine(this.Name + " needs to go on a walk");
         }
+        static public void EvictCat(object sender, ElapsedEventArgs e)
+        {
+
+        }
         public Dog(string szLicense, string szName, int nAge):base(szName, nAge)
         {
             this.license = szLicense;
@@ -173,10 +178,14 @@ namespace PetApp
             Cat cat = null;
             IDog iDog = null;
             ICat iCat = null;
+            //extra code
+            Timer myTimer = new Timer(20000);
+            myTimer.Elapsed += new ElapsedEventHandler(Dog.EvictCat);
+            myTimer.Start();
             //Makes 50 actions 
-            for(int i = 0; i < 50; ++i)
+            for (int i = 0; i < 50; ++i)
             {
-                
+
                 // 1 in 10 chance of adding an animal
                 if (rand.Next(1, 11) == 1)
                 {
@@ -195,17 +204,17 @@ namespace PetApp
                         //{
                         //   thisPet.Name = "Mittens";
                         //}
-                        
+
                     }
                 }
                 else
                 {
                     // choose a random pet from pets and choose a random activity for the pet to do
                     Pet randPet = pets[rand.Next(0, pets.Count)];
-                    switch(rand.Next(1, 5))
+                    switch (rand.Next(1, 5))
                     {
                         case 1:
-                            if(randPet == null)
+                            if (randPet == null)
                             {
                                 break;
                             }
@@ -255,7 +264,6 @@ namespace PetApp
                             break;
                     }
                 }
-
             }
         }
     }
