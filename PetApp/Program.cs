@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
@@ -8,6 +9,7 @@ using System.Timers;
 
 namespace PetApp
 {
+    public delegate void Eviction();
     public abstract class Pet
     {
         private string name;
@@ -130,7 +132,7 @@ namespace PetApp
             Console.WriteLine("PURR");
         }
         //the method that is used when eviction occurs 
-        public void EvictReact()
+        public void Evicted()
         {
 
         }
@@ -182,6 +184,7 @@ namespace PetApp
             Cat cat = null;
             IDog iDog = null;
             ICat iCat = null;
+            ElapsedEventArgs elapsedEventArgs = null;
             //extra code
             Timer myTimer = new Timer(20000);
             myTimer.Elapsed += new ElapsedEventHandler(Dog.EvictCat);

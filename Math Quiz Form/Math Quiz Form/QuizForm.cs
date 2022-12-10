@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -76,6 +77,14 @@ namespace Math_Quiz_Form
             this.FormClosed += QuizForm_FormClosed;
 
             this.textBox1.KeyPress += TextBox1_KeyPress;
+
+            //The text changes each time the awnser happens
+            this.responseLabel.TextChanged += ResponseLabel_TextChanged;
+        }
+
+        private void ResponseLabel_TextChanged(object sender, EventArgs e)
+        {
+            Thread.Sleep(3000);
         }
 
         //only allow digits and backspaces in the textbox
@@ -89,7 +98,7 @@ namespace Math_Quiz_Form
             {
                 e.Handled = true;
             }
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private void QuizForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -176,6 +185,7 @@ namespace Math_Quiz_Form
         }
         private void TimeUp()
         {
+            this.awnser = $"the awnser is {this.nAnswer.ToString()}";
             this.responseLabel.Text = this.awnser;
         }
     }
