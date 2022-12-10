@@ -44,8 +44,14 @@ namespace Math_Quiz_Form
         int val2 = 0;
         int nAnswer = 0;
 
+        //a string to hold the awnser
+        string awnser;
+
         //a number to base the difficulty off of
         int nMaxRange = 0;
+
+        // seed the random number generator
+        Random rand = new Random();
 
         public QuizForm(Form owner, string name, int numOfQuestions, string difficulty, int timeSeconds)
         {
@@ -68,6 +74,22 @@ namespace Math_Quiz_Form
             this.Load += QuizForm_Load;
 
             this.FormClosed += QuizForm_FormClosed;
+
+            this.textBox1.KeyPress += TextBox1_KeyPress;
+        }
+
+        //only allow digits and backspaces in the textbox
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            throw new NotImplementedException();
         }
 
         private void QuizForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -102,19 +124,59 @@ namespace Math_Quiz_Form
                     break;
             }
 
+            // ask each question
+            for (int nCntr = 0; nCntr < numOfQuestions; ++nCntr)
+            {
+                // generate a random number between 0 inclusive and 3 exclusive to get the operation
+                nOp = rand.Next(0, 3);
 
+                val1 = rand.Next(0, nMaxRange) + nMaxRange;
+                val2 = rand.Next(0, nMaxRange);
+
+                // if either argument is 0, pick new numbers
+                if (val1 == 0 || val2 == 0)
+                {
+                    --nCntr;
+                    continue;
+                }
+
+                // if nOp == 0, then addition
+                if (nOp == 0)
+                {
+                    nAnswer = val1 + val2;
+                    this.questionLabel.Text = $"Question #{nCntr + 1}: {val1} + {val2} => ";
+                }
+                // if nOp == 1, then subtraction
+                else if (nOp == 1)
+                {
+                    nAnswer = val1 - val2;
+                    this.questionLabel.Text = $"Question #{nCntr + 1}: {val1} - {val2} => ";
+                }
+                // else multiplication
+                else
+                {
+                    nAnswer = val1 * val2;
+                    this.questionLabel.Text = $"Question #{nCntr + 1}: {val1} * {val2} => ";
+                }
+
+
+            }
         }
-
         //decreases the progress bar every second and disables the text box and shows the awnser
         private void Timer1_Tick(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
             --this.progressBar1.Value;
-            if(this.progressBar1.Value == 0) 
+            if (this.progressBar1.Value == 0)
             {
                 this.timer1.Stop();
                 this.textBox1.Enabled = false;
+                this.TimeUp();
             }
+        }
+        private void TimeUp()
+        {
+            this.responseLabel.Text = this.awnser;
         }
     }
 }

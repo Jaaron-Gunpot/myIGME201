@@ -103,39 +103,50 @@ namespace PetApp
     }
     public class Cat : Pet, ICat
     {
+        public Cat()
+        {
+
+        }
         public override void Eat()
         {
-            Console.WriteLine(this.Name + ":Nom Nom Meow");
+            Console.WriteLine($"{Name}:Nom Nom Meow");
         }
         public override void Play()
         {
             //throw new NotImplementedException();
-            Console.WriteLine(this.Name + "started playing with a ball of yarn");
+            Console.WriteLine($"{Name} started playing with a ball of yarn");
         }
         public override void GoToVet()
         {
             //throw new NotImplementedException();
-            Console.WriteLine(this.Name+ "needs to go to the vet");
+            Console.WriteLine($"{Name} needs to go to the vet");
         }
         public void Scratch()
         {
-            Console.WriteLine(this.Name + "is using the scratch post");
+            Console.WriteLine($"{Name} is using the scratch post");
         }
         public void Purr()
         {
             Console.WriteLine("PURR");
         }
-        public Cat()
+        //the method that is used when eviction occurs 
+        public void EvictReact()
         {
-            
+
         }
     }
     public class Dog : Pet, IDog 
     {
+        public Dog(string szLicense, string szName, int nAge) : base(szName, nAge)
+        {
+            this.license = szLicense;
+            this.Name = szName;
+            this.age = nAge;
+        }
         public string license;
         public override void Eat()
         {
-            Console.WriteLine("Nom Nom Bark");
+            Console.WriteLine(this.Name + ":Nom Nom Bark");
         }
         public override void Play()
         {
@@ -157,22 +168,15 @@ namespace PetApp
         }
         static public void EvictCat(object sender, ElapsedEventArgs e)
         {
-
-        }
-        public Dog(string szLicense, string szName, int nAge):base(szName, nAge)
-        {
-            this.license = szLicense;
-            this.Name = szName;
-            this.age = nAge;
+            
         }
     }
-
-    internal class Program
+    static internal class Program
     {
         static void Main(string[] args)
         {
-            Pets pets = new Pets();
             Random rand = new Random();
+            Pets pets = new Pets();
             Pet thisPet = null;
             Dog dog = null;
             Cat cat = null;
@@ -198,7 +202,9 @@ namespace PetApp
                     else
                     {
                         // else add a cat
-                        pets[i] = new Cat();
+                        cat = new Cat();
+                        cat.Name = "Fluffers";
+                        pets.Add(cat);
                         //((Pet)pets[i]).Name="Mittens";
                         //if(thisPet != null)
                         //{
@@ -210,6 +216,7 @@ namespace PetApp
                 else
                 {
                     // choose a random pet from pets and choose a random activity for the pet to do
+                    //if they don't exist yet just break with doing nothing
                     Pet randPet = pets[rand.Next(0, pets.Count)];
                     switch (rand.Next(1, 5))
                     {
