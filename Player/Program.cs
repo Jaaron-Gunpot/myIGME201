@@ -75,7 +75,7 @@ namespace Player
 
             play.level = 1;
             play.hp = 1;
-            play.inventory.Append("Magic Cane");
+            //play.inventory.Append("Magic Cane");
             play.player_name = "Justin";
             play.license_key = "3418117664822410";
 
